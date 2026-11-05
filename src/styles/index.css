@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* New Colour Theme Tokens */
+  --color-ivory: #F3F1E8;
+  --color-soft-grey: #F1F2F4;
+  --color-lavender-frame: #E3E6EF;
+  --color-sky-wash: #DEEAF9;
+  --color-cream-stone: #DED8C6;
+  --color-porcelain-blue: #8096B8;
+  --color-periwinkle: #9DADD4;
+  --color-ink-blue: #4F6389;
+  --color-black: #111111;
+  --color-white: #FFFFFF;
+  --color-muted: #666666;
+
+  /* Backward-compatible CSS variables mapped to new theme values */
+  --color-misty-blue: #DEEAF9;
+  --color-light-grey: #F3F1E8;
+  --color-pale-blush: #F1F2F4;
+  --color-oak-wood: #DED8C6;
+  --color-nordic-blue: #4F6389;
+  --color-nordic-blue-dark: #4F6389;
+}
+
+@layer base {
+  body {
+    @apply bg-light-grey text-charcoal font-sans antialiased text-base;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: var(--color-sky-wash);
+    color: var(--color-black);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif tracking-tight text-charcoal;
+  }
+
+  /* Accessible focus indicators across interactive elements */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    @apply outline-none ring-2 ring-ink-blue ring-offset-2 ring-offset-ivory;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
