@@ -25,32 +25,26 @@ export const heroScenes = [
     prefix: "",
     emphasisWord: "Wedding",
     suffix: " Photo Albums",
-    caption: "Wedding Photo Albums · Archival Flush Mount",
+    caption: "Wedding · Timeless moments. Forever yours.",
     shortTitle: "Wedding",
     description:
-      "Wedding album is a high-quality, meticulously crafted photo album designed to preserve and showcase the precious memories of a couple's wedding day in an elegant and lavish manner.",
+      "Timeless moments. Forever yours. Preserving the precious memories of a couple's wedding day in an elegant, handcrafted volume.",
     cta: {
       label: "Explore Collection",
       href: "/wedding-photo-albums",
       toConfirm: false,
     },
-    subject:
-      "An open, premium wedding album spread or a closed luxury album, soft natural light, neutral surface",
-    alt: "Handcrafted open flush mount wedding photo album with seamless 180-degree panoramic spread on neutral surface",
-    src: "https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&fit=crop&w=2400&q=85",
-    thumbSrc:
-      "https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&fit=crop&w=360&q=75",
+    subject: "Traditional royal wedding couple in festive attire under floral arch",
+    alt: "Wedding couple in pastel sherwani and bridal lehenga under floral arch",
+    src: "/images/hero/hero-wedding.jpg",
+    thumbSrc: "/images/hero/hero-wedding.jpg",
     srcSet: {
-      small:
-        "https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&fit=crop&w=800&q=80",
-      medium:
-        "https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&fit=crop&w=1400&q=80",
-      large:
-        "https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&fit=crop&w=2400&q=85",
+      small: "/images/hero/hero-wedding.jpg",
+      medium: "/images/hero/hero-wedding.jpg",
+      large: "/images/hero/hero-wedding.jpg",
     },
-    focalPoint: "center center",
-    credit:
-      "Unsplash (Jeremy Wong) · Temporary placeholder · REPLACE WITH REAL PRODUCT PHOTO",
+    focalPoint: "center 30%",
+    credit: "Ultra Albums Official Collection",
   },
   {
     id: "scene-baby",
@@ -59,32 +53,26 @@ export const heroScenes = [
     prefix: "",
     emphasisWord: "Baby",
     suffix: " Photo Albums",
-    caption: "Baby Photo Albums · Fine Art Keepsakes",
+    caption: "Baby · Little moments. Big happiness.",
     shortTitle: "Baby",
     description:
-      "Creating a cherished photo album for your little one is a delightful way to capture and celebrate those precious moments. There are plenty of creative ideas to explore.",
+      "Little moments. Big happiness. Cherish every smile, milestone, and delicate detail of your little one with fine-art keepsakes.",
     cta: {
       label: "Explore Collection",
       href: "/baby-photo-albums",
       toConfirm: true,
     },
-    subject:
-      "A soft, light album or photo book with baby photographs, pastel and gentle tones",
-    alt: "Soft pastel heirloom memory book and newborn photography prints on neutral linen",
-    src: "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=2400&q=85",
-    thumbSrc:
-      "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=360&q=75",
+    subject: "Smiling baby in knit hoodie with bear ears beside teddy bear",
+    alt: "Joyful baby in cozy knitwear with teddy bear",
+    src: "/images/hero/hero-baby.jpg",
+    thumbSrc: "/images/hero/hero-baby.jpg",
     srcSet: {
-      small:
-        "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=800&q=80",
-      medium:
-        "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=1400&q=80",
-      large:
-        "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=2400&q=85",
+      small: "/images/hero/hero-baby.jpg",
+      medium: "/images/hero/hero-baby.jpg",
+      large: "/images/hero/hero-baby.jpg",
     },
-    focalPoint: "center center",
-    credit:
-      "Unsplash (Picsea) · Temporary placeholder · REPLACE WITH REAL PRODUCT PHOTO",
+    focalPoint: "center 35%",
+    credit: "Ultra Albums Official Collection",
   },
   {
     id: "scene-family",
@@ -93,32 +81,26 @@ export const heroScenes = [
     prefix: "",
     emphasisWord: "Family",
     suffix: " Photo Albums",
-    caption: "Family Photo Albums · Generational Heirlooms",
+    caption: "Family · Together is our favourite place.",
     shortTitle: "Family",
     description:
-      "Collection of photographs that document the significant moments, events, and memories shared by a family. Preserving moments of joy, milestones, celebrations, vacations, and everyday life.",
+      "Together is our favourite place. Preserving moments of joy, generational milestones, vacations, and celebrations in an archival book.",
     cta: {
       label: "Explore Collection",
       href: "/family-photo-albums",
       toConfirm: true,
     },
-    subject:
-      "An open family album or photo book on a table, warm and natural, prints visible",
-    alt: "Open family photo album with printed portraits on a natural oak surface",
-    src: "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=2400&q=85",
-    thumbSrc:
-      "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=360&q=75",
+    subject: "Multigenerational family portrait with grandparents, parents, and laughing young boy",
+    alt: "Multigenerational Indian family smiling together outdoors",
+    src: "/images/hero/hero-family.jpg",
+    thumbSrc: "/images/hero/hero-family.jpg",
     srcSet: {
-      small:
-        "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=800&q=80",
-      medium:
-        "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1400&q=80",
-      large:
-        "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=2400&q=85",
+      small: "/images/hero/hero-family.jpg",
+      medium: "/images/hero/hero-family.jpg",
+      large: "/images/hero/hero-family.jpg",
     },
     focalPoint: "center 40%",
-    credit:
-      "Unsplash (Roman Kraft) · Temporary placeholder · REPLACE WITH REAL PRODUCT PHOTO",
+    credit: "Ultra Albums Official Collection",
   },
   {
     id: "scene-travel",
@@ -127,65 +109,25 @@ export const heroScenes = [
     prefix: "",
     emphasisWord: "Travel",
     suffix: " Photo Albums",
-    caption: "Travel Photo Albums · Bound Expeditions",
+    caption: "Travel · Explore. Capture. Relive.",
     shortTitle: "Travel",
     description:
-      "It is a wonderful way to cherish your adventures and relive those special moments. It is not just about preserving images; it's also an opportunity to tell your unique story through visuals, captions, and mementos. It is a reflection of your adventures and the joy you experienced during your travels.",
+      "Explore. Capture. Relive. A wonderful way to cherish your adventures, visual storytelling, and scenic expeditions across the world.",
     cta: {
       label: "Explore Collection",
       href: "/travel-photo-albums",
       toConfirm: true,
     },
-    subject:
-      "An album or photo book with travel photographs, maps or mementos as minimal props",
-    alt: "Bound travel album journal with expedition photography and maps on studio desk",
-    src: "https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?auto=format&fit=crop&w=2400&q=85",
-    thumbSrc:
-      "https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?auto=format&fit=crop&w=360&q=75",
+    subject: "Woman in straw hat overlooking sunset across Mediterranean coastal caldera",
+    alt: "Scenic travel sunset over white seaside village and ocean caldera",
+    src: "/images/hero/hero-travel.jpg",
+    thumbSrc: "/images/hero/hero-travel.jpg",
     srcSet: {
-      small:
-        "https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?auto=format&fit=crop&w=800&q=80",
-      medium:
-        "https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?auto=format&fit=crop&w=1400&q=80",
-      large:
-        "https://images.unsplash.com/photo-1524850011238-e3d235c7d4c9?auto=format&fit=crop&w=2400&q=85",
+      small: "/images/hero/hero-travel.jpg",
+      medium: "/images/hero/hero-travel.jpg",
+      large: "/images/hero/hero-travel.jpg",
     },
-    focalPoint: "center center",
-    credit:
-      "Unsplash (Dariusz Sankowski) · Temporary placeholder · REPLACE WITH REAL PRODUCT PHOTO",
-  },
-  {
-    id: "scene-wall-art",
-    index: 4,
-    title: "Premium Wall Art",
-    prefix: "Premium ",
-    emphasisWord: "Wall",
-    suffix: " Art",
-    caption: "Premium Wall Art · Gallery Framing & Canvas",
-    shortTitle: "Wall Art",
-    description:
-      "Wall decor encompasses a wide range of items that can enhance the aesthetic appeal of your space and reflect your personality and style.",
-    cta: {
-      label: "Explore Collection",
-      href: "/wall-art",
-      toConfirm: true,
-    },
-    subject:
-      "Framed prints or a gallery-style wall display in a calm interior",
-    alt: "Minimal luxury gallery-style framed archival prints hanging in a calm architectural interior",
-    src: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=2400&q=85",
-    thumbSrc:
-      "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=360&q=75",
-    srcSet: {
-      small:
-        "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80",
-      medium:
-        "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=1400&q=80",
-      large:
-        "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=2400&q=85",
-    },
-    focalPoint: "center 45%",
-    credit:
-      "Unsplash (Jonas Jacobsson) · Temporary placeholder · REPLACE WITH REAL PRODUCT PHOTO",
+    focalPoint: "center 35%",
+    credit: "Ultra Albums Official Collection",
   },
 ];
