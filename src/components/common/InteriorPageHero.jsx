@@ -63,9 +63,9 @@ export default function InteriorPageHero({
       <motion.img
         src={image}
         alt={imageAlt || title}
-        initial={shouldReduceMotion ? { scale: 1 } : { scale: 1.04 }}
+        initial={shouldReduceMotion ? { scale: 1 } : { scale: 1.08 }}
         animate={{ scale: 1 }}
-        transition={{ duration: 0.85, ease: MOTION.ease.out }}
+        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         style={{ objectPosition: focalPosition }}
         className="absolute inset-0 w-full h-full object-cover"
         loading="eager"

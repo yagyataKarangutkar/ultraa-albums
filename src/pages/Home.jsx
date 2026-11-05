@@ -64,51 +64,54 @@ export default function Home() {
           </FadeIn>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {services.map((service, idx) => (
-              <FadeIn key={service.id} delay={idx * 0.06}>
-                <div className="bg-white border border-charcoal/15 p-8 flex flex-col justify-between h-full">
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-[10px] uppercase font-sans tracking-widest-luxury text-nordic-blue-dark font-semibold bg-light-grey px-2.5 py-1 border border-charcoal/10">
-                        {service.badge}
-                      </span>
+            {services.map((service, idx) => {
+              const cardDirection = idx === 0 ? 'left' : idx === 1 ? 'up' : 'right';
+              return (
+                <FadeIn key={service.id} delay={idx * 0.08} direction={cardDirection} distance={36}>
+                  <div className="bg-white border border-charcoal/15 p-8 flex flex-col justify-between h-full rounded-[2px] transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl hover:border-charcoal/40 group">
+                    <div>
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="text-[10px] uppercase font-sans tracking-widest-luxury text-nordic-blue-dark font-semibold bg-light-grey px-2.5 py-1 border border-charcoal/10 transition-colors group-hover:border-charcoal/25">
+                          {service.badge}
+                        </span>
+                      </div>
+
+                      <h3 className="font-serif text-2xl text-charcoal group-hover:text-black transition-colors">{service.title}</h3>
+
+                      <p className="mt-3 text-xs sm:text-sm text-charcoal/70 leading-relaxed font-light">
+                        {service.shortDescription}
+                      </p>
+
+                      <div className="my-6 overflow-hidden rounded-[1px] transition-transform duration-500 ease-out group-hover:scale-[1.02]">
+                        <ImagePlaceholder
+                          src={service.image}
+                          alt={service.alt || service.title}
+                          subject={service.placeholderSubject}
+                          aspect="16/9"
+                          tone="misty"
+                          showBadge={false}
+                        />
+                      </div>
+
+                      <ul className="space-y-2 mt-4 text-xs text-charcoal/80 font-light">
+                        {service.features.slice(0, 3).map((feat, fIdx) => (
+                          <li key={fIdx} className="flex items-start gap-2">
+                            <CheckCircle className="w-3.5 h-3.5 text-nordic-blue-dark flex-shrink-0 mt-0.5 transition-transform duration-200 group-hover:scale-110" />
+                            <span>{feat}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
 
-                    <h3 className="font-serif text-2xl text-charcoal">{service.title}</h3>
-
-                    <p className="mt-3 text-xs sm:text-sm text-charcoal/70 leading-relaxed font-light">
-                      {service.shortDescription}
-                    </p>
-
-                    <div className="my-6">
-                      <ImagePlaceholder
-                        src={service.image}
-                        alt={service.alt || service.title}
-                        subject={service.placeholderSubject}
-                        aspect="16/9"
-                        tone="misty"
-                        showBadge={false}
-                      />
+                    <div className="mt-8 pt-6 border-t border-charcoal/10">
+                      <Button to="/services" variant="ghost" size="sm" icon={ArrowRight}>
+                        Explore Service Details
+                      </Button>
                     </div>
-
-                    <ul className="space-y-2 mt-4 text-xs text-charcoal/80 font-light">
-                      {service.features.slice(0, 3).map((feat, fIdx) => (
-                        <li key={fIdx} className="flex items-start gap-2">
-                          <CheckCircle className="w-3.5 h-3.5 text-nordic-blue-dark flex-shrink-0 mt-0.5" />
-                          <span>{feat}</span>
-                        </li>
-                      ))}
-                    </ul>
                   </div>
-
-                  <div className="mt-8 pt-6 border-t border-charcoal/10">
-                    <Button to="/services" variant="ghost" size="sm" icon={ArrowRight}>
-                      Explore Service Details
-                    </Button>
-                  </div>
-                </div>
-              </FadeIn>
-            ))}
+                </FadeIn>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -186,20 +189,21 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {advantages.map((adv, idx) => {
               const Icon = advantageIcons[adv.icon] || ShieldCheck;
+              const advDirection = idx % 2 === 0 ? 'left' : 'right';
               return (
-                <FadeIn key={adv.step} delay={idx * 0.06}>
-                  <div className="bg-white border border-charcoal/15 p-7 flex flex-col justify-between h-full hover:border-charcoal/40 transition-colors">
+                <FadeIn key={adv.step} delay={idx * 0.08} direction={advDirection} distance={28}>
+                  <div className="bg-white border border-charcoal/15 p-7 flex flex-col justify-between h-full rounded-[2px] transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-lg hover:border-charcoal/40 group">
                     <div>
                       <div className="flex items-center justify-between mb-5">
-                        <span className="font-serif text-2xl text-nordic-blue-dark">
+                        <span className="font-serif text-2xl text-nordic-blue-dark transition-transform duration-300 group-hover:scale-110">
                           {adv.step}
                         </span>
-                        <div className="w-9 h-9 rounded-full bg-light-grey flex items-center justify-center text-charcoal/80">
+                        <div className="w-9 h-9 rounded-full bg-light-grey flex items-center justify-center text-charcoal/80 transition-colors duration-300 group-hover:bg-charcoal group-hover:text-white">
                           <Icon className="w-4 h-4" strokeWidth={1.5} />
                         </div>
                       </div>
 
-                      <h3 className="font-serif text-xl text-charcoal">{adv.title}</h3>
+                      <h3 className="font-serif text-xl text-charcoal group-hover:text-black transition-colors">{adv.title}</h3>
                       <p className="text-[11px] font-sans uppercase tracking-wider-luxury text-charcoal/50 mt-1 mb-3">
                         {adv.subtitle}
                       </p>
@@ -233,13 +237,13 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
             {processSteps.map((step, idx) => (
-              <FadeIn key={step.step} delay={idx * 0.06}>
-                <div className="relative flex flex-col h-full border-t border-charcoal/20 pt-6">
-                  <span className="font-serif text-3xl sm:text-4xl text-charcoal/30 mb-3 font-normal">
+              <FadeIn key={step.step} delay={idx * 0.1} direction="up" distance={32}>
+                <div className="relative flex flex-col h-full border-t-2 border-charcoal/20 pt-6 transition-all duration-300 hover:border-charcoal group">
+                  <span className="font-serif text-3xl sm:text-4xl text-charcoal/30 mb-3 font-normal transition-colors duration-300 group-hover:text-charcoal">
                     {step.step}
                   </span>
 
-                  <h3 className="font-serif text-xl text-charcoal mb-2">{step.title}</h3>
+                  <h3 className="font-serif text-xl text-charcoal mb-2 group-hover:text-black transition-colors">{step.title}</h3>
 
                   <p className="text-xs text-charcoal/80 font-medium mb-2 leading-snug">
                     {step.summary}
@@ -271,8 +275,8 @@ export default function Home() {
             </div>
           </FadeIn>
 
-          <FadeIn delay={0.1}>
-            <div className="max-w-2xl mx-auto bg-white border border-charcoal/15 p-8 sm:p-12 text-center">
+          <FadeIn delay={0.1} direction="scale">
+            <div className="max-w-2xl mx-auto bg-white border border-charcoal/15 p-8 sm:p-12 text-center rounded-[2px] shadow-sm hover:shadow-md transition-shadow duration-300">
               <span className="inline-block px-3 py-1 bg-light-grey text-[10px] uppercase font-sans tracking-widest-luxury text-charcoal/60 border border-charcoal/10 mb-4">
                 Client Content Review Pending
               </span>
@@ -296,9 +300,9 @@ export default function Home() {
       {/* =========================================================================
           SECTION 8: FINAL CTA
          ========================================================================= */}
-      <section className="bg-charcoal text-white py-20 sm:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <FadeIn>
+      <section className="bg-charcoal text-white py-20 sm:py-28 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <FadeIn direction="up" distance={40}>
             <div className="max-w-3xl mx-auto">
               <SectionLabel theme="dark" withLine className="mb-4">
                 Partner With Ultra Albums
@@ -313,7 +317,7 @@ export default function Home() {
               </p>
 
               <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button to="/contact-us" variant="white" size="lg" icon={ArrowRight}>
+                <Button to="/contact-us" variant="white" size="lg" icon={ArrowRight} className="hover:scale-[1.02] transition-transform">
                   Request Studio Sample
                 </Button>
 
@@ -323,7 +327,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                   variant="outline"
                   size="lg"
-                  className="text-white border-white/40 hover:bg-white/10"
+                  className="text-white border-white/40 hover:bg-white/10 hover:border-white transition-all"
                   icon={Download}
                 >
                   Download Catalogue PDF
@@ -331,7 +335,7 @@ export default function Home() {
               </div>
 
               <div className="mt-8 flex items-center justify-center gap-2 text-xs text-misty-blue">
-                <Phone className="w-3.5 h-3.5" />
+                <Phone className="w-3.5 h-3.5 animate-pulse" />
                 <span>Direct Mumbai Lab Line:</span>
                 <a href={companyInfo.phoneTel} className="text-white hover:underline font-medium">
                   {companyInfo.phone}

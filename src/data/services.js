@@ -7,8 +7,8 @@ export const services = [
       "Full human-curated layout design with 6-7 thematic aesthetics, digital soft-copy proofs, and unlimited revisions until you are completely satisfied.",
     longDescription:
       "Unlike generic automated layout software that places crops arbitrarily, our in-house designers curate each spread with compositional rhythm, visual pacing, and emotional impact. We provide digital flip-book soft-copies for studio and couple review, accompanied by unlimited revisions.",
-    image: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80",
-    alt: "Eventful Indian wedding ceremony varmala and floral garland rituals designed into bespoke album spreads",
+    image: "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1200&q=80",
+    alt: "Eventful royal wedding ceremony varmala and floral garland rituals designed into bespoke album spreads",
     features: [
       "Choice of 6-7 distinct design themes (Classic Elegance, Contemporary Minimal, Editorial Vogue, Traditional Luxe, etc.)",
       "Interactive digital soft-copy preview link for client sign-off",
@@ -26,8 +26,8 @@ export const services = [
       "Skin retouching, tone grading, background cleanup, and color harmonization tailored to pro photography standards.",
     longDescription:
       "Free your team from hours of repetitive post-production. Our digital darkroom specialists execute detailed frequency separation, skin smoothing, stray hair removal, color cast correction, and tone matching calibrated specifically for physical print output.",
-    image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1200&q=80",
-    alt: "Festive Indian wedding celebration with vibrant floral colors, joyful rituals, and fine-art color grading",
+    image: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80",
+    alt: "Festive wedding celebration with vibrant floral colors, joyful rituals, and fine-art color grading",
     features: [
       "High-end frequency separation and natural skin texture retention",
       "Color grading harmonization across multiple camera bodies and light conditions",
@@ -35,7 +35,7 @@ export const services = [
       "Strict print-calibrated color profiles (sRGB / Adobe RGB / ProPhoto)",
       "Fast turnaround on batch wedding catalogs and portrait sessions",
     ],
-    placeholderSubject: "Vibrant Indian wedding haldi & celebration portrait with skin retouching and color harmonization",
+    placeholderSubject: "Vibrant Indian wedding celebration portrait with skin retouching and color harmonization",
   },
   {
     id: "wedding-photography",

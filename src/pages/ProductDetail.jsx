@@ -48,16 +48,18 @@ export default function ProductDetail({ defaultSlug }) {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
               {/* Visual Column */}
               <div className="lg:col-span-7">
-                <FadeIn>
-                  <div className="border border-charcoal/15 bg-light-grey p-3 sm:p-4">
-                    <ImagePlaceholder
-                      src={product.image}
-                      alt={product.alt || product.title}
-                      subject={product.placeholderSubject}
-                      aspect="4/3"
-                      tone="oak"
-                      className="w-full"
-                    />
+                <FadeIn direction="left" distance={40}>
+                  <div className="border border-charcoal/15 bg-light-grey p-3 sm:p-4 rounded-[2px] shadow-sm hover:shadow-xl hover:border-charcoal/30 transition-all duration-500 group overflow-hidden">
+                    <div className="overflow-hidden">
+                      <ImagePlaceholder
+                        src={product.image}
+                        alt={product.alt || product.title}
+                        subject={product.placeholderSubject}
+                        aspect="4/3"
+                        tone="oak"
+                        className="w-full transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                      />
+                    </div>
                     <div className="mt-3 px-2 flex items-center justify-between text-[11px] text-charcoal/50 font-sans">
                       <span>{product.title} — Mumbai Workshop Master Edition</span>
                       <span className="italic">Archival silver halide & fine-art media</span>
@@ -66,25 +68,31 @@ export default function ProductDetail({ defaultSlug }) {
 
                   {/* Secondary Detail Photography Tiles */}
                   <div className="grid grid-cols-2 gap-4 mt-4">
-                    <div className="border border-charcoal/10 bg-soft-grey/60 p-2">
-                      <ImagePlaceholder
-                        src={product.detailImage1}
-                        alt={`${product.title} craftsmanship detail`}
-                        subject="Macro close-up of spine stitching & foil deboss"
-                        aspect="3/2"
-                        tone="blush"
-                        showBadge={false}
-                      />
+                    <div className="border border-charcoal/10 bg-soft-grey/60 p-2 rounded-[2px] overflow-hidden group hover:border-charcoal/30 transition-colors">
+                      <div className="overflow-hidden">
+                        <ImagePlaceholder
+                          src={product.detailImage1}
+                          alt={`${product.title} craftsmanship detail`}
+                          subject="Macro close-up of spine stitching & foil deboss"
+                          aspect="3/2"
+                          tone="blush"
+                          showBadge={false}
+                          className="transition-transform duration-500 group-hover:scale-105"
+                        />
+                      </div>
                     </div>
-                    <div className="border border-charcoal/10 bg-sky-wash/40 p-2">
-                      <ImagePlaceholder
-                        src={product.detailImage2}
-                        alt={`${product.title} layflat core spread`}
-                        subject="Open layflat seam detail showing flush mount core"
-                        aspect="3/2"
-                        tone="misty"
-                        showBadge={false}
-                      />
+                    <div className="border border-charcoal/10 bg-sky-wash/40 p-2 rounded-[2px] overflow-hidden group hover:border-charcoal/30 transition-colors">
+                      <div className="overflow-hidden">
+                        <ImagePlaceholder
+                          src={product.detailImage2}
+                          alt={`${product.title} layflat core spread`}
+                          subject="Open layflat seam detail showing flush mount core"
+                          aspect="3/2"
+                          tone="misty"
+                          showBadge={false}
+                          className="transition-transform duration-500 group-hover:scale-105"
+                        />
+                      </div>
                     </div>
                   </div>
                 </FadeIn>
@@ -92,7 +100,7 @@ export default function ProductDetail({ defaultSlug }) {
 
               {/* Spec / Info Column */}
               <div className="lg:col-span-5 flex flex-col justify-between">
-                <FadeIn delay={0.1}>
+                <FadeIn delay={0.12} direction="right" distance={40}>
                   <div>
                     {product.tag && (
                       <span className="inline-block px-2.5 py-1 text-[10px] uppercase font-sans tracking-widest-luxury text-ink-blue bg-light-grey border border-charcoal/10 mb-3">

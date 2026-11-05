@@ -27,17 +27,20 @@ export default function Services() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
           {services.map((service, idx) => {
             const isReversed = idx % 2 !== 0;
+            const textDirection = isReversed ? 'right' : 'left';
+            const photoDirection = isReversed ? 'left' : 'right';
 
             return (
-              <FadeIn key={service.id} delay={0.08}>
-                <div
-                  id={service.id}
-                  className={`grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center ${
-                    isReversed ? 'lg:flex-row-reverse' : ''
-                  }`}
-                >
-                  {/* Service Text Description */}
-                  <div className={`lg:col-span-6 ${isReversed ? 'lg:order-2' : ''}`}>
+              <div
+                key={service.id}
+                id={service.id}
+                className={`grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center ${
+                  isReversed ? 'lg:flex-row-reverse' : ''
+                }`}
+              >
+                {/* Service Text Description */}
+                <div className={`lg:col-span-6 ${isReversed ? 'lg:order-2' : ''}`}>
+                  <FadeIn direction={textDirection} distance={40}>
                     <span className="text-[10px] uppercase font-sans tracking-widest text-[#77736E] font-semibold block mb-2">
                       {service.badge}
                     </span>
@@ -65,7 +68,7 @@ export default function Services() {
                     </div>
 
                     <div className="mt-8 flex items-center gap-4">
-                      <Button to={`/contact-us?service=${service.id}`} variant="primary" size="md">
+                      <Button to={`/contact-us?service=${service.id}`} variant="primary" size="md" className="hover:scale-[1.02] transition-transform">
                         Enquire for Service
                       </Button>
                       <Button
@@ -74,25 +77,30 @@ export default function Services() {
                         rel="noopener noreferrer"
                         variant="outline"
                         size="md"
+                        className="hover:scale-[1.02] transition-transform"
                       >
                         Ask on Messenger
                       </Button>
                     </div>
-                  </div>
-
-                  {/* Service Curated Photography */}
-                  <div className={`lg:col-span-6 ${isReversed ? 'lg:order-1' : ''}`}>
-                    <div className="p-2 bg-[#F5F3EE] border border-[#E5E1DA] rounded-[2px] shadow-sm">
-                      <img
-                        src={service.image}
-                        alt={service.alt || service.title}
-                        className="w-full aspect-[4/3] object-cover rounded-[1px]"
-                        loading="lazy"
-                      />
-                    </div>
-                  </div>
+                  </FadeIn>
                 </div>
-              </FadeIn>
+
+                {/* Service Curated Photography */}
+                <div className={`lg:col-span-6 ${isReversed ? 'lg:order-1' : ''}`}>
+                  <FadeIn direction={photoDirection} distance={40} delay={0.1}>
+                    <div className="p-2 bg-[#F5F3EE] border border-[#E5E1DA] rounded-[2px] shadow-sm hover:shadow-xl hover:border-[#171717]/30 transition-all duration-500 group overflow-hidden">
+                      <div className="overflow-hidden rounded-[1px]">
+                        <img
+                          src={service.image}
+                          alt={service.alt || service.title}
+                          className="w-full aspect-[4/3] object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                          loading="lazy"
+                        />
+                      </div>
+                    </div>
+                  </FadeIn>
+                </div>
+              </div>
             );
           })}
         </div>
@@ -116,17 +124,18 @@ export default function Services() {
           </FadeIn>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {processSteps.map((step) => (
-              <div
-                key={step.step}
-                className="bg-white p-6 border border-[#E5E1DA] rounded-[2px] shadow-2xs flex flex-col justify-between"
-              >
-                <div>
-                  <span className="font-serif text-2xl text-[#77736E]">{step.step}</span>
-                  <h4 className="font-serif text-lg text-[#171717] mt-2 mb-1.5">{step.title}</h4>
-                  <p className="text-xs text-[#77736E] leading-relaxed font-light">{step.details}</p>
+            {processSteps.map((step, idx) => (
+              <FadeIn key={step.step} delay={idx * 0.08} direction="up" distance={24}>
+                <div
+                  className="bg-white p-6 border border-[#E5E1DA] rounded-[2px] shadow-2xs hover:shadow-lg hover:border-[#171717]/30 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between h-full group"
+                >
+                  <div>
+                    <span className="font-serif text-2xl text-[#77736E] transition-colors group-hover:text-black">{step.step}</span>
+                    <h4 className="font-serif text-lg text-[#171717] mt-2 mb-1.5">{step.title}</h4>
+                    <p className="text-xs text-[#77736E] leading-relaxed font-light">{step.details}</p>
+                  </div>
                 </div>
-              </div>
+              </FadeIn>
             ))}
           </div>
         </div>

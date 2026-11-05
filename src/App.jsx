@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import ScrollToTop from './components/layout/ScrollToTop';
+import useLenisScroll from './hooks/useLenisScroll';
 
 import Home from './pages/Home';
 import Products from './pages/Products';
@@ -19,6 +20,7 @@ import { pageFadeVariants } from './lib/motion';
 
 export default function App() {
   const location = useLocation();
+  useLenisScroll();
 
   return (
     <div className="min-h-screen flex flex-col bg-light-grey text-charcoal font-sans selection:bg-misty-blue selection:text-charcoal">

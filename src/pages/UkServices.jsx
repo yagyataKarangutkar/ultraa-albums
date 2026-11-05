@@ -44,7 +44,7 @@ export default function UkServices() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
             {/* Story & Specifications Column */}
             <div className="lg:col-span-8 space-y-6 text-sm sm:text-base text-[#77736E] font-light leading-relaxed">
-              <FadeIn>
+              <FadeIn direction="left" distance={40}>
                 <span className="text-[10px] uppercase font-sans tracking-widest text-[#77736E] font-semibold block mb-2">
                   Great Britain & International
                 </span>
@@ -62,14 +62,14 @@ export default function UkServices() {
 
                 {/* Minimalist 2-card advantage row */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-6">
-                  <div className="p-6 border border-[#E5E1DA] bg-[#F5F3EE] rounded-[2px]">
+                  <div className="p-6 border border-[#E5E1DA] bg-[#F5F3EE] rounded-[2px] hover:-translate-y-1 hover:shadow-md hover:border-[#171717]/30 transition-all duration-300">
                     <Globe className="w-4 h-4 text-[#171717] mb-2.5" />
                     <h3 className="font-serif text-lg text-[#171717]">Express UK Air Freight</h3>
                     <p className="mt-1.5 text-xs text-[#77736E] font-light leading-relaxed">
                       Secure shockproof packaging with tracked DHL / FedEx air delivery to UK addresses.
                     </p>
                   </div>
-                  <div className="p-6 border border-[#E5E1DA] bg-[#F5F3EE] rounded-[2px]">
+                  <div className="p-6 border border-[#E5E1DA] bg-[#F5F3EE] rounded-[2px] hover:-translate-y-1 hover:shadow-md hover:border-[#171717]/30 transition-all duration-300">
                     <Shield className="w-4 h-4 text-[#171717] mb-2.5" />
                     <h3 className="font-serif text-lg text-[#171717]">Archival Warranty</h3>
                     <p className="mt-1.5 text-xs text-[#77736E] font-light leading-relaxed">
@@ -79,7 +79,7 @@ export default function UkServices() {
                 </div>
 
                 <div className="pt-8 flex items-center gap-4">
-                  <Button to="/contact-us?region=uk" variant="primary" size="md">
+                  <Button to="/contact-us?region=uk" variant="primary" size="md" className="hover:scale-[1.02] transition-transform">
                     Enquire for UK Dispatch
                   </Button>
                   <Button
@@ -89,6 +89,7 @@ export default function UkServices() {
                     variant="outline"
                     size="md"
                     icon={Download}
+                    className="hover:scale-[1.02] transition-transform"
                   >
                     Catalogue PDF
                   </Button>
@@ -98,7 +99,7 @@ export default function UkServices() {
 
             {/* Sidebar Navigation */}
             <div className="lg:col-span-4 space-y-6">
-              <FadeIn delay={0.1}>
+              <FadeIn direction="right" distance={40} delay={0.12}>
                 <div className="p-6 bg-[#F5F3EE] border border-[#E5E1DA] rounded-[2px]">
                   <span className="text-[10px] uppercase font-sans tracking-widest text-[#77736E] font-semibold block mb-4">
                     UK Regional Offerings

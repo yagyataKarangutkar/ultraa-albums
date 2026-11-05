@@ -26,7 +26,7 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             {/* Story Text Column */}
             <div className="lg:col-span-6 space-y-6 text-sm sm:text-base text-[#77736E] font-light leading-relaxed">
-              <FadeIn>
+              <FadeIn direction="left" distance={40}>
                 <span className="text-[10px] uppercase font-sans tracking-widest text-[#77736E] font-semibold block mb-2">
                   Our Philosophy
                 </span>
@@ -50,15 +50,17 @@ export default function About() {
 
             {/* Artisanal Workshop Image */}
             <div className="lg:col-span-6">
-              <FadeIn delay={0.15}>
-                <div className="relative p-2 bg-[#F5F3EE] border border-[#E5E1DA] rounded-[2px] shadow-sm">
-                  <img
-                    src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80"
-                    alt="Master bookbinder inspecting handcrafted leather spine and foil debossing in workshop"
-                    className="w-full aspect-[4/3] object-cover rounded-[1px]"
-                    loading="lazy"
-                  />
-                  <div className="py-2 px-1 text-center text-[10.5px] uppercase font-sans tracking-widest text-[#77736E]">
+              <FadeIn delay={0.15} direction="right" distance={40}>
+                <div className="relative p-2 bg-[#F5F3EE] border border-[#E5E1DA] rounded-[2px] shadow-sm hover:shadow-xl hover:border-[#171717]/30 transition-all duration-500 group overflow-hidden">
+                  <div className="overflow-hidden rounded-[1px]">
+                    <img
+                      src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80"
+                      alt="Master bookbinder inspecting handcrafted leather spine and foil debossing in workshop"
+                      className="w-full aspect-[4/3] object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="py-2.5 px-1 text-center text-[10.5px] uppercase font-sans tracking-widest text-[#77736E] transition-colors group-hover:text-[#171717]">
                     Mumbai Atelier • Handcrafted Quality Control
                   </div>
                 </div>
@@ -71,7 +73,7 @@ export default function About() {
       {/* Minimal Studio Location & Direct Contact */}
       <section className="bg-[#F5F3EE] py-20 sm:py-24 border-b border-[#E5E1DA]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <FadeIn>
+          <FadeIn direction="scale" distance={24}>
             <span className="text-[10px] uppercase font-sans tracking-widest text-[#77736E] font-semibold block mb-2">
               Production Atelier
             </span>
@@ -89,7 +91,7 @@ export default function About() {
             </p>
 
             <div className="mt-8 flex items-center justify-center gap-4">
-              <Button to="/contact-us" variant="primary" size="md">
+              <Button to="/contact-us" variant="primary" size="md" className="hover:scale-[1.02] transition-transform">
                 Contact Studio
               </Button>
               <Button
@@ -99,6 +101,7 @@ export default function About() {
                 variant="outline"
                 size="md"
                 icon={Download}
+                className="hover:scale-[1.02] transition-transform"
               >
                 Catalogue PDF
               </Button>

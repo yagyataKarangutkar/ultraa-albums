@@ -69,6 +69,12 @@ export default function Hero({ onExploreClick }) {
       setProgress(0);
       progressStartTimeRef.current = Date.now();
       transitionCountRef.current += 1;
+
+      // Fail-safe transition unlock
+      setTimeout(() => {
+        setIsTransitioning(false);
+        setPreviousSceneIndex(null);
+      }, TRANSITION_LOCK_MS);
     },
     [activeSceneIndex, isTransitioning]
   );
@@ -79,12 +85,12 @@ export default function Hero({ onExploreClick }) {
     setIsTransitioning(false);
   }, []);
 
-  // ─── Autoplay timer ───────────────────────────────────────────────────────
+  // ─── Continuous Autoplay timer ───────────────────────────────────────────
   useEffect(() => {
-    if (isPaused || isTransitioning) return;
+    if (isTransitioning) return;
 
     progressStartTimeRef.current = Date.now();
-    const stepMs = 50;
+    const stepMs = 40;
 
     progressIntervalRef.current = setInterval(() => {
       const elapsed = Date.now() - progressStartTimeRef.current;
@@ -92,6 +98,9 @@ export default function Hero({ onExploreClick }) {
       setProgress(currentProgress);
 
       if (currentProgress >= 1) {
+        if (progressIntervalRef.current) {
+          clearInterval(progressIntervalRef.current);
+        }
         const nextIdx = (activeSceneIndex + 1) % heroScenes.length;
         handleSelectScene(nextIdx);
       }
@@ -102,9 +111,9 @@ export default function Hero({ onExploreClick }) {
         clearInterval(progressIntervalRef.current);
       }
     };
-  }, [activeSceneIndex, handleSelectScene, isPaused, isTransitioning]);
+  }, [activeSceneIndex, isTransitioning, handleSelectScene]);
 
-  // ─── Pause autoplay when tab is hidden ────────────────────────────────────
+  // ─── Pause autoplay only when tab is hidden ──────────────────────────────
   useEffect(() => {
     const handleVisibility = () => {
       if (document.hidden) {
@@ -117,13 +126,6 @@ export default function Hero({ onExploreClick }) {
     document.addEventListener('visibilitychange', handleVisibility);
     return () => document.removeEventListener('visibilitychange', handleVisibility);
   }, []);
-
-  // ─── Hover pause / resume ─────────────────────────────────────────────────
-  const handleMouseEnter = () => setIsPaused(true);
-  const handleMouseLeave = () => {
-    setIsPaused(false);
-    progressStartTimeRef.current = Date.now();
-  };
 
   // ─── Mobile Touch Swipe ───────────────────────────────────────────────────
   const handleTouchStart = (e) => {
@@ -149,8 +151,6 @@ export default function Hero({ onExploreClick }) {
       id="hero-section"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
       className="relative w-full h-[100svh] min-h-[640px] max-h-[1440px] overflow-hidden bg-light-grey text-charcoal flex flex-col justify-end"
       aria-label="Ultra Albums Featured Hero"
     >

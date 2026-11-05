@@ -50,6 +50,36 @@
   select:focus-visible {
     @apply outline-none ring-2 ring-ink-blue ring-offset-2 ring-offset-ivory;
   }
+
+  /* Luxury subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F3F1E8;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(17, 17, 17, 0.25);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(17, 17, 17, 0.45);
+  }
+}
+
+/* React Bits / Luxury Smooth Animation Utilities */
+@layer utilities {
+  .transition-luxury {
+    transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .card-lift {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
+  }
+  .card-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  }
 }
 
 /* Reduced motion support */

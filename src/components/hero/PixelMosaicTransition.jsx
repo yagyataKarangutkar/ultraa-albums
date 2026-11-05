@@ -159,8 +159,18 @@ export default function PixelMosaicTransition({
 
     // Load the incoming image (should already be cached/preloaded)
     const img = new Image();
-    img.crossOrigin = 'anonymous';
+    if (incomingSrc.startsWith('http')) {
+      img.crossOrigin = 'anonymous';
+    }
     img.src = incomingSrc;
+
+    // Fail-safe timeout so transitions never hang or lock state
+    const fallbackTimer = setTimeout(() => {
+      if (!completedRef.current) {
+        completedRef.current = true;
+        onComplete?.();
+      }
+    }, (TRANSITION_DURATION + 0.4) * 1000);
 
     const startAnimation = () => {
       const { scaledW, scaledH, offsetX, offsetY } = coverFit(
@@ -263,7 +273,10 @@ export default function PixelMosaicTransition({
       };
     }
 
-    return cleanup;
+    return () => {
+      clearTimeout(fallbackTimer);
+      cleanup();
+    };
   }, [incomingSrc, focalPoint, pattern, onComplete, reducedMotion, cleanup]);
 
   // Reduced motion: render nothing (parent will use instant swap)

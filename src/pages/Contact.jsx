@@ -24,8 +24,8 @@ export default function Contact() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             {/* Form Column */}
             <div className="lg:col-span-7">
-              <FadeIn>
-                <div className="bg-[#F5F3EE] p-7 sm:p-9 border border-[#E5E1DA] rounded-[2px] shadow-sm">
+              <FadeIn direction="left" distance={40}>
+                <div className="bg-[#F5F3EE] p-7 sm:p-9 border border-[#E5E1DA] rounded-[2px] shadow-sm hover:shadow-md hover:border-[#171717]/25 transition-all duration-300">
                   <span className="text-[10px] uppercase font-sans tracking-widest text-[#77736E] font-semibold block mb-2">
                     Direct Inquiry
                   </span>
@@ -42,12 +42,12 @@ export default function Contact() {
 
             {/* Direct Channels Column */}
             <div className="lg:col-span-5 space-y-6">
-              <FadeIn delay={0.1}>
+              <FadeIn delay={0.12} direction="right" distance={40}>
                 {/* Direct Phone */}
-                <div className="p-6 bg-white border border-[#E5E1DA] rounded-[2px] shadow-2xs">
+                <div className="p-6 bg-white border border-[#E5E1DA] rounded-[2px] shadow-2xs hover:-translate-y-1 hover:shadow-md hover:border-[#171717]/30 transition-all duration-300 group">
                   <div className="flex items-start gap-3.5">
-                    <div className="w-8 h-8 rounded-full bg-[#F5F3EE] border border-[#E5E1DA] text-[#171717] flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-4 h-4 text-[#171717]" />
+                    <div className="w-8 h-8 rounded-full bg-[#F5F3EE] border border-[#E5E1DA] text-[#171717] flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-[#171717] group-hover:text-white">
+                      <Phone className="w-4 h-4" />
                     </div>
                     <div>
                       <span className="text-[9.5px] uppercase font-sans tracking-widest text-[#77736E] font-medium block">
@@ -66,10 +66,10 @@ export default function Contact() {
                 </div>
 
                 {/* Instant Messaging */}
-                <div className="p-6 bg-white border border-[#E5E1DA] rounded-[2px] shadow-2xs">
+                <div className="p-6 bg-white border border-[#E5E1DA] rounded-[2px] shadow-2xs hover:-translate-y-1 hover:shadow-md hover:border-[#171717]/30 transition-all duration-300 group">
                   <div className="flex items-start gap-3.5">
-                    <div className="w-8 h-8 rounded-full bg-[#F5F3EE] border border-[#E5E1DA] text-[#171717] flex items-center justify-center flex-shrink-0">
-                      <MessageSquare className="w-4 h-4 text-[#171717]" />
+                    <div className="w-8 h-8 rounded-full bg-[#F5F3EE] border border-[#E5E1DA] text-[#171717] flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-[#171717] group-hover:text-white">
+                      <MessageSquare className="w-4 h-4" />
                     </div>
                     <div>
                       <span className="text-[9.5px] uppercase font-sans tracking-widest text-[#77736E] font-medium block">

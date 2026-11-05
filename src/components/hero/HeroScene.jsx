@@ -42,17 +42,9 @@ export default function HeroScene({ scene, isLcp = false }) {
         </div>
       )}
 
-      {/* Light wash & editorial gradient for WCAG AAA deep black text legibility */}
+      {/* Subtle localized left gradient strictly for typography contrast — preserves 100% original photo saturation & sharpness across the center & right */}
       <div
-        className="absolute inset-0 bg-white/20 pointer-events-none"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute inset-0 bg-gradient-to-r from-light-grey/90 via-white/55 to-transparent pointer-events-none"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-white/40 to-transparent pointer-events-none"
+        className="absolute inset-y-0 left-0 w-full sm:w-2/3 lg:w-1/2 bg-gradient-to-r from-white/75 via-white/40 to-transparent pointer-events-none"
         aria-hidden="true"
       />
     </div>

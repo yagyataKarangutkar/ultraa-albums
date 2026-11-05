@@ -80,15 +80,18 @@ export default function AlbumShowroom({ className = '' }) {
 
         {/* 4 Showcase Album Products Floor */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 items-stretch">
-          {showcaseAlbums.map((album, idx) => (
-            <FadeIn key={album.id} delay={idx * 0.08} className="flex h-full">
-              <Album3DProduct
-                album={album}
-                index={idx}
-                onSelect={handleSelectAlbum}
-              />
-            </FadeIn>
-          ))}
+          {showcaseAlbums.map((album, idx) => {
+            const albumDir = idx === 0 ? 'left' : idx === 3 ? 'right' : 'up';
+            return (
+              <FadeIn key={album.id} delay={idx * 0.08} direction={albumDir} distance={32} className="flex h-full">
+                <Album3DProduct
+                  album={album}
+                  index={idx}
+                  onSelect={handleSelectAlbum}
+                />
+              </FadeIn>
+            );
+          })}
         </div>
 
         {/* Compact Studio Note Information Strip */}

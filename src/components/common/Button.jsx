@@ -21,7 +21,7 @@ export default function Button({
   ...props
 }) {
   const baseStyles =
-    'inline-flex items-center justify-center font-sans tracking-wider-luxury uppercase text-xs transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nordic-blue focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none select-none';
+    'group inline-flex items-center justify-center font-sans tracking-wider-luxury uppercase text-xs transition-all duration-300 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-nordic-blue focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none select-none rounded-[1px] hover:-translate-y-0.5';
 
   const sizeStyles = {
     sm: 'px-4 py-2 text-[11px] gap-1.5',
@@ -31,15 +31,15 @@ export default function Button({
 
   const variantStyles = {
     primary:
-      'bg-charcoal text-white hover:bg-black/85 active:scale-[0.99] border border-charcoal shadow-sm',
+      'bg-charcoal text-white hover:bg-black/90 active:scale-[0.98] border border-charcoal shadow-sm hover:shadow-md',
     secondary:
-      'bg-oak-wood text-charcoal hover:bg-oak-wood/80 active:scale-[0.99] border border-oak-wood',
+      'bg-oak-wood text-charcoal hover:bg-oak-wood/80 active:scale-[0.98] border border-oak-wood hover:shadow-sm',
     outline:
-      'bg-transparent text-charcoal border border-charcoal/40 hover:border-charcoal hover:bg-charcoal/5 active:scale-[0.99]',
+      'bg-transparent text-charcoal border border-charcoal/40 hover:border-charcoal hover:bg-charcoal/5 active:scale-[0.98]',
     ghost:
-      'bg-transparent text-charcoal hover:text-nordic-blue-dark px-0 py-1 underline-offset-8 hover:underline border-none shadow-none',
+      'bg-transparent text-charcoal hover:text-nordic-blue-dark px-0 py-1 underline-offset-8 hover:underline border-none shadow-none hover:translate-y-0',
     white:
-      'bg-white text-charcoal hover:bg-white/90 active:scale-[0.99] border border-white/80 shadow-sm',
+      'bg-white text-charcoal hover:bg-white/95 active:scale-[0.98] border border-white/80 shadow-sm hover:shadow-md',
   };
 
   const combinedStyles = `${baseStyles} ${sizeStyles[size] || sizeStyles.md} ${
@@ -48,9 +48,13 @@ export default function Button({
 
   const content = (
     <>
-      {Icon && iconPosition === 'left' && <Icon className="w-3.5 h-3.5" aria-hidden="true" />}
+      {Icon && iconPosition === 'left' && (
+        <Icon className="w-3.5 h-3.5 transition-transform duration-300 ease-out group-hover:-translate-x-1" aria-hidden="true" />
+      )}
       <span>{children}</span>
-      {Icon && iconPosition === 'right' && <Icon className="w-3.5 h-3.5" aria-hidden="true" />}
+      {Icon && iconPosition === 'right' && (
+        <Icon className="w-3.5 h-3.5 transition-transform duration-300 ease-out group-hover:translate-x-1" aria-hidden="true" />
+      )}
     </>
   );
 

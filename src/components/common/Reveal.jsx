@@ -3,41 +3,74 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { MOTION } from '../../lib/motion';
 
 /**
- * Universal Reveal Component.
- * - Single source of truth for element entrance reveals across the application.
- * - Enforces `once: true` so animations fire only ONCE and never re-trigger on every scroll pass.
- * - Subtle vertical travel (16px max) with smooth deceleration curve [0.22, 1, 0.36, 1].
- * - Full prefers-reduced-motion support (renders instantly without movement).
- * - Safe fallback: if observer fails, content renders visible.
+ * Universal Reveal Component (React Bits Enhanced).
+ * - Full directional support: 'up' | 'down' | 'left' | 'right' | 'scale' | 'blur' | 'none'
+ * - Smooth luxury ease: [0.16, 1, 0.3, 1]
+ * - Fires once on scroll entrance with graceful margin trigger.
+ * - Full prefers-reduced-motion fallback.
  */
 export default function Reveal({
   children,
   delay = 0,
-  duration = MOTION.duration.base,
-  direction = 'up', // 'up' | 'none'
+  duration = 0.55,
+  direction = 'up',
+  distance = 32,
   className = '',
   as = 'div',
   ...props
 }) {
   const shouldReduceMotion = useReducedMotion();
 
-  // If user prefers reduced motion, render immediately with zero animation
   if (shouldReduceMotion) {
     return <div className={className}>{children}</div>;
   }
 
-  const initialY = direction === 'up' ? MOTION.distance.reveal : 0;
+  let initialVariants = { opacity: 0 };
+  let animateVariants = { opacity: 1 };
+
+  switch (direction) {
+    case 'left':
+      initialVariants = { opacity: 0, x: -distance };
+      animateVariants = { opacity: 1, x: 0 };
+      break;
+    case 'right':
+      initialVariants = { opacity: 0, x: distance };
+      animateVariants = { opacity: 1, x: 0 };
+      break;
+    case 'down':
+      initialVariants = { opacity: 0, y: -distance };
+      animateVariants = { opacity: 1, y: 0 };
+      break;
+    case 'scale':
+      initialVariants = { opacity: 0, scale: 0.94, y: distance * 0.4 };
+      animateVariants = { opacity: 1, scale: 1, y: 0 };
+      break;
+    case 'blur':
+      initialVariants = { opacity: 0, filter: 'blur(10px)', y: distance * 0.5 };
+      animateVariants = { opacity: 1, filter: 'blur(0px)', y: 0 };
+      break;
+    case 'up':
+      initialVariants = { opacity: 0, y: distance };
+      animateVariants = { opacity: 1, y: 0 };
+      break;
+    case 'none':
+    default:
+      initialVariants = { opacity: 0 };
+      animateVariants = { opacity: 1 };
+      break;
+  }
+
   const MotionComponent = motion[as] || motion.div;
 
   return (
     <MotionComponent
-      initial={{ opacity: 0, y: initialY }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-40px' }}
+      initial={initialVariants}
+      whileInView={animateVariants}
+      viewport={{ once: true, margin: '-50px' }}
       transition={{
         duration,
         delay,
-        ease: MOTION.ease.out,
+        ease: [0.16, 1, 0.3, 1],
       }}
       className={className}
       {...props}
@@ -46,4 +79,3 @@ export default function Reveal({
     </MotionComponent>
   );
 }
-
