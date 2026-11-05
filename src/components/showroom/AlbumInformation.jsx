@@ -21,7 +21,7 @@ export default function AlbumInformation({ album, className = '' }) {
 
   return (
     <div
-      className={`bg-white border border-[#E5E1DA] p-5 sm:p-6 lg:p-7 flex flex-col justify-between text-[#171717] shadow-sm rounded-[3px] max-h-[min(580px,82vh)] overflow-hidden select-none ${className}`}
+      className={`bg-white border border-[#E5E1DA] p-5 sm:p-6 lg:p-7 flex flex-col justify-between text-[#171717] shadow-sm rounded-[3px] max-h-none lg:max-h-[min(580px,82vh)] overflow-visible lg:overflow-hidden select-none ${className}`}
     >
       <div className="flex-1 min-h-0 overflow-y-auto pr-1">
         {/* Category Eyebrow */}
