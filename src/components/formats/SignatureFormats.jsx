@@ -432,7 +432,7 @@ export default function SignatureFormats() {
     <section
       id="signature-formats"
       ref={sectionRef}
-      className="relative w-full overflow-hidden"
+      className="relative w-full overflow-hidden isolate"
       aria-label="Signature Format Families"
     >
       <FormatStage

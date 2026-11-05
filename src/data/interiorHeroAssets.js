@@ -41,9 +41,9 @@ export const interiorHeroAssets = {
     badge: "Human-Curated Layouts",
     layout: "collage",
     image:
-      "https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=1600&q=85",
-    imageAlt: "Studio album designer curating panoramic layout spreads on color-calibrated display",
-    focalPosition: "center 50%",
+      "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1600&q=85",
+    imageAlt: "Grand Indian wedding ceremony with royal varmala, floral shower, and festive celebration",
+    focalPosition: "center 40%",
     secondaryImage:
       "https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=800&q=80",
     secondaryAlt: "Physical open 180° layflat panoramic wedding album spread",

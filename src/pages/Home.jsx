@@ -51,7 +51,7 @@ export default function Home() {
           SECTION 4: SERVICES
           Album Designing, Image Editing, Wedding Photography
          ========================================================================= */}
-      <section className="relative z-20 bg-soft-grey py-20 sm:py-28 border-b border-charcoal/10">
+      <section className="relative z-30 bg-soft-grey py-20 sm:py-28 border-b border-charcoal/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <div className="max-w-3xl mb-14">

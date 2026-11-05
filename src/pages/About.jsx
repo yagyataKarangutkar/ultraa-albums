@@ -53,8 +53,8 @@ export default function About() {
               <FadeIn delay={0.15}>
                 <div className="relative p-2 bg-[#F5F3EE] border border-[#E5E1DA] rounded-[2px] shadow-sm">
                   <img
-                    src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80"
-                    alt="Master craftsman hand-gluing spine headband and aligning archival core album pages"
+                    src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80"
+                    alt="Master bookbinder inspecting handcrafted leather spine and foil debossing in workshop"
                     className="w-full aspect-[4/3] object-cover rounded-[1px]"
                     loading="lazy"
                   />

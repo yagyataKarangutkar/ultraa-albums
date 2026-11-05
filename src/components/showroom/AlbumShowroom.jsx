@@ -36,7 +36,7 @@ export default function AlbumShowroom({ className = '' }) {
   return (
     <section
       id="3d-album-showroom"
-      className={`relative z-20 bg-white py-14 sm:py-20 lg:py-24 border-b border-charcoal/10 overflow-hidden ${className}`}
+      className={`relative z-30 bg-white py-14 sm:py-20 lg:py-24 border-b border-charcoal/10 overflow-hidden ${className}`}
     >
       {/* Background Architectural Grid Accent */}
       <div
