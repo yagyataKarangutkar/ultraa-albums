@@ -21,7 +21,7 @@ export default function About() {
       <InteriorPageHero {...interiorHeroAssets.about} />
 
       {/* Main Heritage & Philosophy Story */}
-      <section className="py-20 sm:py-28 border-b border-[#E5E1DA]">
+      <section className="py-14 sm:py-20 lg:py-28 border-b border-[#E5E1DA]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             {/* Story Text Column */}
@@ -71,7 +71,7 @@ export default function About() {
       </section>
 
       {/* Minimal Studio Location & Direct Contact */}
-      <section className="bg-[#F5F3EE] py-20 sm:py-24 border-b border-[#E5E1DA]">
+      <section className="bg-[#F5F3EE] py-14 sm:py-20 lg:py-24 border-b border-[#E5E1DA]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn direction="scale" distance={24}>
             <span className="text-[10px] uppercase font-sans tracking-widest text-[#77736E] font-semibold block mb-2">

@@ -51,7 +51,7 @@ export default function Home() {
           SECTION 4: SERVICES
           Album Designing, Image Editing, Wedding Photography
          ========================================================================= */}
-      <section className="relative z-30 bg-soft-grey py-20 sm:py-28 border-b border-charcoal/10">
+      <section className="relative z-30 bg-soft-grey py-14 sm:py-20 lg:py-28 border-b border-charcoal/10 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <div className="max-w-3xl mb-14">
@@ -119,7 +119,7 @@ export default function Home() {
       {/* =========================================================================
           SECTION 4: ABOUT ULTRA ALBUMS (Mumbai Lab & Heritage)
          ========================================================================= */}
-      <section className="relative z-30 bg-white py-20 sm:py-28 border-b border-charcoal/10">
+      <section className="relative z-30 bg-white py-14 sm:py-20 lg:py-28 border-b border-charcoal/10">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <SectionLabel withLine theme="light" className="mb-3">
@@ -173,7 +173,7 @@ export default function Home() {
       {/* =========================================================================
           SECTION 5: WHY ULTRA ALBUMS (4 Confirmed Points)
          ========================================================================= */}
-      <section className="bg-light-grey py-20 sm:py-28 border-b border-charcoal/10">
+      <section className="bg-light-grey py-14 sm:py-20 lg:py-28 border-b border-charcoal/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <div className="text-center max-w-2xl mx-auto mb-16">
@@ -223,7 +223,7 @@ export default function Home() {
       {/* =========================================================================
           SECTION 6: HOW IT WORKS (4 Process Steps)
          ========================================================================= */}
-      <section className="bg-white py-20 sm:py-28 border-b border-charcoal/10">
+      <section className="bg-white py-14 sm:py-20 lg:py-28 border-b border-charcoal/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <div className="max-w-3xl mb-16">

@@ -147,7 +147,7 @@ export default function FormatAlbum({
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`relative w-full max-w-[320px] sm:max-w-[380px] md:max-w-[430px] h-[370px] sm:h-[430px] md:h-[490px] flex items-center justify-center select-none cursor-grab active:cursor-grabbing ${className}`}
+      className={`relative w-full max-w-[260px] xs:max-w-[310px] sm:max-w-[380px] md:max-w-[430px] h-[260px] xs:h-[310px] sm:h-[430px] md:h-[490px] flex items-center justify-center select-none cursor-grab active:cursor-grabbing ${className}`}
       style={{ perspective: '1200px' }}
     >
       {/* 1. Realistic Multi-Layer Ambient Contact Shadow */}
@@ -167,7 +167,7 @@ export default function FormatAlbum({
 
       {/* 2. Physical 3D Album Body */}
       <div
-        className="relative w-60 sm:w-72 md:w-80 h-76 sm:h-92 md:h-[400px] rounded-[4px]"
+        className="relative w-48 xs:w-56 sm:w-72 md:w-80 h-60 xs:h-72 sm:h-92 md:h-[400px] rounded-[4px]"
         style={{
           transform: `rotateY(${tilt.rotY}deg) rotateX(${tilt.rotX}deg) rotateZ(${tilt.rotZ}deg) translate3d(${tilt.trX}px, ${tilt.trY}px, 0)`,
           transformStyle: 'preserve-3d',

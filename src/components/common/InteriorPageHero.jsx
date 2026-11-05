@@ -56,7 +56,7 @@ export default function InteriorPageHero({
 
   return (
     <section
-      className={`relative w-full h-[360px] sm:h-[400px] lg:h-[440px] flex items-center justify-center overflow-hidden bg-[#111111] select-none border-b border-black/20 ${className}`}
+      className={`relative w-full min-h-[320px] sm:min-h-[380px] lg:min-h-[440px] py-12 sm:py-16 flex items-center justify-center overflow-hidden bg-[#111111] select-none border-b border-black/20 ${className}`}
       aria-label={`${title} Banner`}
     >
       {/* 1. Full-Bleed Background Photographic Hero Image */}
@@ -148,7 +148,7 @@ export default function InteriorPageHero({
           {/* Main Display Heading (Semantic H1) */}
           <motion.h1
             variants={itemFadeUp}
-            className="font-serif text-3xl sm:text-5xl lg:text-[56px] text-white font-normal leading-[1.08] tracking-tight drop-shadow-sm max-w-3xl"
+            className="font-serif text-[28px] xs:text-3xl sm:text-5xl lg:text-[56px] text-white font-normal leading-[1.08] tracking-tight drop-shadow-sm max-w-3xl break-words"
           >
             {title}
           </motion.h1>

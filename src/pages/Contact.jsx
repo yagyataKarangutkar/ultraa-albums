@@ -19,7 +19,7 @@ export default function Contact() {
       <InteriorPageHero {...interiorHeroAssets.contact} />
 
       {/* Main Content: Form + Studio Details */}
-      <section id="contact-form" className="py-20 sm:py-28 border-b border-[#E5E1DA]">
+      <section id="contact-form" className="py-14 sm:py-20 lg:py-28 border-b border-[#E5E1DA]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             {/* Form Column */}

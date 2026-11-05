@@ -186,12 +186,12 @@ export default function Navbar() {
           </div>
 
           {/* Right: Messenger & Pay Online */}
-          <div className="flex items-center gap-4 sm:gap-6">
+          <div className="flex items-center gap-3 sm:gap-6">
             <a
               href={topBarLinks.messengerUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 transition-colors text-charcoal/80 hover:text-nordic-blue"
+              className="hidden sm:inline-flex items-center gap-1.5 transition-colors text-charcoal/80 hover:text-nordic-blue"
             >
               <MessageSquare className="w-3 h-3 text-nordic-blue" />
               <span>Facebook Messenger</span>
@@ -201,7 +201,7 @@ export default function Navbar() {
               href={topBarLinks.payOnlineUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 font-medium transition-colors pl-3 border-l text-charcoal hover:text-nordic-blue border-charcoal/15"
+              className="inline-flex items-center gap-1.5 font-medium transition-colors pl-2.5 sm:pl-3 border-l text-charcoal hover:text-nordic-blue border-charcoal/15 text-[10.5px] sm:text-[11px]"
             >
               <CreditCard className="w-3 h-3 text-nordic-blue" />
               <span>Pay Online</span>
@@ -229,7 +229,7 @@ export default function Navbar() {
           <div className="flex-shrink-0">
             <Link
               to="/"
-              className="font-serif text-lg sm:text-xl font-normal tracking-[0.16em] text-charcoal hover:text-nordic-blue transition-colors uppercase select-none"
+              className="font-serif text-base sm:text-xl font-normal tracking-[0.12em] sm:tracking-[0.16em] text-charcoal hover:text-nordic-blue transition-colors uppercase select-none"
               aria-label="Ultra Albums Home"
             >
               Ultra Albums
@@ -507,7 +507,7 @@ export default function Navbar() {
               initial="closed"
               animate="open"
               exit="closed"
-              className="fixed inset-y-0 right-0 w-full max-w-md bg-white border-l border-oak-wood shadow-2xl flex flex-col justify-between overflow-y-auto"
+              className="fixed inset-y-0 right-0 w-full max-w-[320px] xs:max-w-[360px] sm:max-w-md bg-white border-l border-oak-wood shadow-2xl flex flex-col justify-between overflow-y-auto pb-[env(safe-area-inset-bottom,1rem)]"
             >
               {/* Drawer Header (Old logo image removed) */}
               <div>

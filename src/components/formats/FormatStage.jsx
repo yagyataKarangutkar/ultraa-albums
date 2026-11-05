@@ -88,7 +88,7 @@ export default function FormatStage({
             <div className="relative z-20 w-full max-w-7xl mx-auto flex-1 flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-10 my-auto py-2">
               
               {/* LEFT COLUMN: Hero Physical 3D Album Stage with Words Behind */}
-              <div className="relative w-full lg:w-1/2 flex items-center justify-center h-[320px] sm:h-[390px] md:h-[450px] lg:h-[500px]">
+              <div className="relative w-full lg:w-1/2 flex items-center justify-center h-[260px] xs:h-[300px] sm:h-[390px] md:h-[450px] lg:h-[500px]">
                 
                 {/* Layer A: Giant Ghosted Words BEHIND Album (z-10, strictly bounded to prevent horizontal scrollbar) */}
                 <div

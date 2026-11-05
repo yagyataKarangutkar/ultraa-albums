@@ -23,7 +23,7 @@ export default function Services() {
       <InteriorPageHero {...interiorHeroAssets.services} />
 
       {/* Services Detailed List */}
-      <section className="py-20 sm:py-28 border-b border-[#E5E1DA]">
+      <section className="py-14 sm:py-20 lg:py-28 border-b border-[#E5E1DA]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
           {services.map((service, idx) => {
             const isReversed = idx % 2 !== 0;

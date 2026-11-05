@@ -30,7 +30,7 @@ export default function FormatInfoCard({ format, onEnquire }) {
 
   return (
     <div
-      className="w-full max-w-md bg-white border border-charcoal/15 shadow-xl sm:shadow-2xl rounded-[3px] p-5 sm:p-7 text-charcoal select-none"
+      className="w-full max-w-md bg-white border border-charcoal/15 shadow-xl sm:shadow-2xl rounded-[3px] p-4 xs:p-5 sm:p-7 text-charcoal select-none"
       aria-label={`${name} Craft Specifications`}
     >
       {/* Header Tag & Subtitle */}

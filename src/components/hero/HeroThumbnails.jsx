@@ -81,7 +81,7 @@ export default function HeroThumbnails({
                 aria-label={`Slide 0${idx + 1}: ${scene.title}`}
                 onClick={() => onSelect(idx)}
                 onKeyDown={(e) => handleKeyDown(e, idx)}
-                className={`relative group overflow-hidden w-12 h-9 sm:w-18 sm:h-13 md:w-22 md:h-15 lg:w-24 lg:h-16 rounded-[2px] transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-charcoal ${
+                className={`relative group overflow-hidden w-11 h-8 xs:w-12 xs:h-9 sm:w-18 sm:h-13 md:w-22 md:h-15 lg:w-24 lg:h-16 rounded-[2px] transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-charcoal ${
                   isActive
                     ? 'ring-2 ring-charcoal shadow-md opacity-100 scale-[1.02]'
                     : 'opacity-65 hover:opacity-90 ring-1 ring-charcoal/20'

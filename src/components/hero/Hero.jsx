@@ -151,7 +151,7 @@ export default function Hero({ onExploreClick }) {
       id="hero-section"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
-      className="relative w-full h-[100svh] min-h-[640px] max-h-[1440px] overflow-hidden bg-light-grey text-charcoal flex flex-col justify-end"
+      className="relative w-full h-[100svh] min-h-[560px] sm:min-h-[640px] max-h-[1440px] overflow-hidden bg-light-grey text-charcoal flex flex-col justify-end"
       aria-label="Ultra Albums Featured Hero"
     >
       {/* ─── Background Image Layers ───────────────────────────────────── */}
@@ -194,19 +194,19 @@ export default function Hero({ onExploreClick }) {
       </div>
 
       {/* ─── Content Arena ─────────────────────────────────────────────── */}
-      <div className="relative z-30 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 sm:pb-14 md:pb-16 flex flex-col lg:flex-row lg:items-end justify-between gap-8 sm:gap-10 pointer-events-none">
+      <div className="relative z-30 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6 sm:pb-12 md:pb-16 flex flex-col lg:flex-row lg:items-end justify-between gap-6 sm:gap-10 pointer-events-none">
         {/* Left Column: Typography */}
         <div className="max-w-2xl text-left pointer-events-auto">
           {/* Micro Section Label */}
-          <div className="mb-3 sm:mb-4 flex items-center gap-2.5">
-            <span className="w-6 h-px bg-charcoal/60" aria-hidden="true" />
-            <span className="font-sans text-[10px] sm:text-[11px] uppercase tracking-widest-luxury text-charcoal font-bold drop-shadow-2xs">
+          <div className="mb-2 sm:mb-4 flex items-center gap-2.5">
+            <span className="w-5 sm:w-6 h-px bg-charcoal/60" aria-hidden="true" />
+            <span className="font-sans text-[9.5px] sm:text-[11px] uppercase tracking-widest-luxury text-charcoal font-bold drop-shadow-2xs">
               Photo Album Manufacturer · Mumbai
             </span>
           </div>
 
           {/* Reserved Height Heading Container */}
-          <div className="min-h-[78px] sm:min-h-[110px] md:min-h-[130px] lg:min-h-[150px] flex items-center">
+          <div className="min-h-[64px] sm:min-h-[110px] md:min-h-[130px] lg:min-h-[150px] flex items-center">
             <AnimatePresence mode="wait" initial={false}>
               <motion.h1
                 key={activeScene.id}
@@ -218,7 +218,7 @@ export default function Hero({ onExploreClick }) {
                   duration: shouldReduceMotion ? 0 : 0.22,
                   ease: 'easeOut',
                 }}
-                className="font-serif font-normal text-4xl sm:text-6xl md:text-7xl lg:text-[76px] leading-[1.05] text-charcoal tracking-tight select-none"
+                className="font-serif font-normal text-[32px] xs:text-4xl sm:text-6xl md:text-7xl lg:text-[76px] leading-[1.06] text-charcoal tracking-tight select-none break-words"
               >
                 {activeScene.prefix}
                 <span className="relative inline-block italic font-normal text-charcoal">

@@ -21,7 +21,7 @@ export default function Products() {
       <InteriorPageHero {...interiorHeroAssets.products} />
 
       {/* Collections Grid */}
-      <section className="py-20 sm:py-28 border-b border-[#E5E1DA]">
+      <section className="py-14 sm:py-20 lg:py-28 border-b border-[#E5E1DA]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
             {products.map((product, idx) => {

@@ -229,12 +229,12 @@ export default function AlbumExperience({
       {/* Main Content Arena: 65-70% Album Stage + 30-35% Info Panel */}
       <main
         ref={stageAreaRef}
-        className="relative z-10 w-full max-w-7xl mx-auto flex-1 min-h-0 flex items-center justify-center py-2 overflow-hidden"
+        className="relative z-10 w-full max-w-7xl mx-auto flex-1 min-h-0 py-2 overflow-y-auto lg:overflow-hidden"
       >
-        <div className="w-full h-full grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-8 items-center min-h-0">
+        <div className="w-full h-auto lg:h-full grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center min-h-0">
           {/* Left/Center Column (65-70% width): 3D Album Stage */}
           <section
-            className="lg:col-span-7 xl:col-span-8 h-full flex flex-col items-center justify-center min-h-0 overflow-hidden"
+            className="lg:col-span-7 xl:col-span-8 flex flex-col items-center justify-center min-h-[340px] sm:min-h-[420px] lg:h-full lg:min-h-0 overflow-visible"
             aria-label="3D Album Interactive Stage"
           >
             <AlbumPageTurner
@@ -246,7 +246,7 @@ export default function AlbumExperience({
 
           {/* Right Column (30-35% width): Product Information & Specifications */}
           <section
-            className="lg:col-span-5 xl:col-span-4 h-full flex flex-col justify-center min-h-0 overflow-hidden"
+            className="lg:col-span-5 xl:col-span-4 flex flex-col justify-center min-h-0 pb-6 lg:pb-0 overflow-visible lg:overflow-y-auto"
             aria-label="Product Specifications"
           >
             <AlbumInformation album={activeAlbum} />

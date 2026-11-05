@@ -27,7 +27,7 @@ export default function FAQ() {
       <InteriorPageHero {...interiorHeroAssets.faq} />
 
       {/* Accordion FAQ Section */}
-      <section className="py-20 sm:py-28 border-b border-[#E5E1DA]">
+      <section className="py-14 sm:py-20 lg:py-28 border-b border-[#E5E1DA]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-3.5">
             {faqs.map((faq, idx) => {
