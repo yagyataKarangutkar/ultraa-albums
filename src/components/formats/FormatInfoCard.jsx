@@ -30,38 +30,36 @@ export default function FormatInfoCard({ format, onEnquire }) {
 
   return (
     <div
-      className="w-full max-w-md bg-white border border-charcoal/15 shadow-xl sm:shadow-2xl rounded-[3px] p-4 xs:p-5 sm:p-7 text-charcoal select-none"
+      className="w-full max-w-md bg-white border border-[#E5E1DA] shadow-sm rounded-[2px] p-5 sm:p-7 text-[#111111] select-none"
       aria-label={`${name} Craft Specifications`}
     >
       {/* Header Tag & Subtitle */}
-      <div className="flex items-center justify-between border-b border-charcoal/10 pb-3 mb-4">
+      <div className="flex items-center justify-between border-b border-[#E5E1DA] pb-3.5 mb-4">
         <div>
-          <span className="font-sans text-[10px] uppercase tracking-widest-luxury text-ink-blue font-semibold">
+          <span className="font-sans text-[9.5px] uppercase tracking-widest text-[#77736E] font-medium block mb-0.5">
             Craft Specifications
           </span>
-          <h4 className="font-serif text-lg sm:text-xl font-normal text-charcoal leading-tight">
+          <h4 className="font-serif text-xl sm:text-2xl font-normal text-[#111111] leading-tight">
             {specs.formatType}
           </h4>
         </div>
-        <span className="inline-flex items-center gap-1.5 text-[10px] font-sans text-charcoal/65 uppercase tracking-wider bg-light-grey/80 px-2 py-1 border border-charcoal/10 rounded-[1px]">
-          <Clock className="w-3 h-3 text-ink-blue flex-shrink-0" />
-          <span>{specs.productionLead}</span>
+        <span className="text-[10px] font-sans text-[#77736E] uppercase tracking-wider bg-[#F5F3EE] px-2.5 py-1 border border-[#E5E1DA] rounded-[1px]">
+          {specs.productionLead}
         </span>
       </div>
 
-      {/* Specification Key-Value Grid */}
+      {/* Specification Key-Value Grid — Clean Minimal Typography */}
       <dl className="space-y-3.5 text-xs font-sans">
         {/* Available Sizes */}
         <div>
-          <dt className="text-[10px] uppercase tracking-wider-luxury text-charcoal/60 font-semibold mb-1.5 flex items-center gap-1.5">
-            <Maximize2 className="w-3.5 h-3.5 text-ink-blue flex-shrink-0" />
-            <span>Standard Pro Sizes</span>
+          <dt className="text-[9.5px] uppercase tracking-widest text-[#77736E] font-medium mb-1.5">
+            Standard Pro Sizes
           </dt>
           <dd className="flex flex-wrap gap-1.5">
             {specs.sizes.map((size) => (
               <span
                 key={size}
-                className="px-2.5 py-0.5 bg-ivory text-charcoal text-[11px] font-medium border border-charcoal/15 rounded-[2px]"
+                className="px-2.5 py-0.5 bg-[#FAF9F6] text-[#111111] text-[11px] font-normal border border-[#E5E1DA] rounded-[1px]"
               >
                 {size}
               </span>
@@ -70,41 +68,38 @@ export default function FormatInfoCard({ format, onEnquire }) {
         </div>
 
         {/* Cover Materials */}
-        <div className="pt-2.5 border-t border-charcoal/8">
-          <dt className="text-[10px] uppercase tracking-wider-luxury text-charcoal/60 font-semibold mb-1 flex items-center gap-1.5">
-            <Layers className="w-3.5 h-3.5 text-ink-blue flex-shrink-0" />
-            <span>Cover Materials</span>
+        <div className="pt-2.5 border-t border-[#E5E1DA]/60">
+          <dt className="text-[9.5px] uppercase tracking-widest text-[#77736E] font-medium mb-1">
+            Cover Materials
           </dt>
-          <dd className="text-charcoal/85 text-xs font-light leading-snug">
+          <dd className="text-[#111111]/85 text-xs font-light leading-snug">
             {specs.coverOptions}
           </dd>
         </div>
 
         {/* Paper & Core */}
-        <div className="pt-2.5 border-t border-charcoal/8">
-          <dt className="text-[10px] uppercase tracking-wider-luxury text-charcoal/60 font-semibold mb-1 flex items-center gap-1.5">
-            <Sparkles className="w-3.5 h-3.5 text-ink-blue flex-shrink-0" />
-            <span>Archival Paper & Core</span>
+        <div className="pt-2.5 border-t border-[#E5E1DA]/60">
+          <dt className="text-[9.5px] uppercase tracking-widest text-[#77736E] font-medium mb-1">
+            Archival Paper & Core
           </dt>
-          <dd className="text-charcoal/85 text-xs font-light leading-snug">
+          <dd className="text-[#111111]/85 text-xs font-light leading-snug">
             {specs.paperType}
           </dd>
         </div>
 
         {/* Binding Craft */}
-        <div className="pt-2.5 border-t border-charcoal/8">
-          <dt className="text-[10px] uppercase tracking-wider-luxury text-charcoal/60 font-semibold mb-1 flex items-center gap-1.5">
-            <ShieldCheck className="w-3.5 h-3.5 text-ink-blue flex-shrink-0" />
-            <span>Artisanal Construction</span>
+        <div className="pt-2.5 border-t border-[#E5E1DA]/60">
+          <dt className="text-[9.5px] uppercase tracking-widest text-[#77736E] font-medium mb-1">
+            Artisanal Construction
           </dt>
-          <dd className="text-charcoal/85 text-xs font-light leading-snug">
+          <dd className="text-[#111111]/85 text-xs font-light leading-snug">
             {specs.bindingCraft}
           </dd>
         </div>
       </dl>
 
       {/* Action Footers */}
-      <div className="mt-6 pt-5 border-t border-charcoal/10 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+      <div className="mt-6 pt-5 border-t border-[#E5E1DA] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
         {/* Primary Enquire Button */}
         <Button
           to={`/contact-us?service=${format.id}&album=${encodeURIComponent(enquirePrefill)}`}
@@ -120,7 +115,7 @@ export default function FormatInfoCard({ format, onEnquire }) {
         {/* Secondary Detail Link */}
         <Link
           to={ctaHref}
-          className="text-center sm:text-right text-xs font-sans font-medium text-charcoal/70 hover:text-ink-blue transition-colors uppercase tracking-wider py-1"
+          className="text-center sm:text-right text-xs font-sans font-medium text-[#77736E] hover:text-[#111111] transition-colors uppercase tracking-wider py-1"
         >
           View Details & 3D →
         </Link>

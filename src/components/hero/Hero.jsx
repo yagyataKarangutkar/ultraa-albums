@@ -194,103 +194,55 @@ export default function Hero({ onExploreClick }) {
       </div>
 
       {/* ─── Content Arena ─────────────────────────────────────────────── */}
-      <div className="relative z-30 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6 sm:pb-12 md:pb-16 flex flex-col lg:flex-row lg:items-end justify-between gap-6 sm:gap-10 pointer-events-none">
-        {/* Left Column: Typography */}
-        <div className="max-w-2xl text-left pointer-events-auto">
-          {/* Micro Section Label */}
-          <div className="mb-2 sm:mb-4 flex items-center gap-2.5">
-            <span className="w-5 sm:w-6 h-px bg-charcoal/60" aria-hidden="true" />
-            <span className="font-sans text-[9.5px] sm:text-[11px] uppercase tracking-widest-luxury text-charcoal font-bold drop-shadow-2xs">
-              Photo Album Manufacturer · Mumbai
-            </span>
-          </div>
-
-          {/* Reserved Height Heading Container */}
-          <div className="min-h-[64px] sm:min-h-[110px] md:min-h-[130px] lg:min-h-[150px] flex items-center">
-            <AnimatePresence mode="wait" initial={false}>
-              <motion.h1
-                key={activeScene.id}
-                aria-live="polite"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{
-                  duration: shouldReduceMotion ? 0 : 0.22,
-                  ease: 'easeOut',
-                }}
-                className="font-serif font-normal text-[32px] xs:text-4xl sm:text-6xl md:text-7xl lg:text-[76px] leading-[1.06] text-charcoal tracking-tight select-none break-words"
-              >
-                {activeScene.prefix}
-                <span className="relative inline-block italic font-normal text-charcoal">
-                  {activeScene.emphasisWord}
-                  <WavyUnderline
-                    color="#111111"
-                    className="-bottom-1.5 sm:-bottom-2 md:-bottom-2.5 text-charcoal"
-                  />
-                </span>
-                {activeScene.suffix}
-              </motion.h1>
-            </AnimatePresence>
-          </div>
-
-          {/* Supporting Text */}
-          <div className="mt-4 sm:mt-5 min-h-[58px] sm:min-h-[72px] md:min-h-[80px]">
-            <AnimatePresence mode="wait" initial={false}>
-              <motion.div
-                key={activeScene.id}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{
-                  duration: shouldReduceMotion ? 0 : 0.22,
-                  ease: 'easeOut',
-                }}
-                className="text-sm sm:text-base md:text-lg text-charcoal/90 font-normal leading-relaxed max-w-xl"
-              >
-                <p
-                  className={`transition-all duration-200 ${
-                    isDescriptionExpanded
-                      ? ''
-                      : 'line-clamp-3 sm:line-clamp-none'
-                  }`}
-                >
-                  {activeScene.description}
-                </p>
-
-                {/* Mobile 'Read more' toggle */}
-                {activeScene.description.length > 170 && (
-                  <button
-                    type="button"
-                    onClick={() =>
-                      setIsDescriptionExpanded(!isDescriptionExpanded)
-                    }
-                    className="sm:hidden mt-1.5 text-xs text-charcoal underline uppercase tracking-wider font-bold focus:outline-none"
-                  >
-                    {isDescriptionExpanded ? 'Show less' : 'Read more'}
-                  </button>
-                )}
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
-          {/* Primary CTA */}
-          <div className="mt-6 sm:mt-8 flex items-center gap-4">
-            <Button
-              to={activeScene.cta.href}
-              onClick={(e) => {
-                if (onExploreClick) {
-                  e.preventDefault();
-                  onExploreClick(activeScene);
-                }
+      <div className="relative z-30 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 sm:pb-12 md:pb-16 flex flex-col lg:flex-row lg:items-end justify-between gap-6 sm:gap-10 pointer-events-none">
+        {/* Left Column: Pure Minimal Luxury Editorial Typography */}
+        <div className="max-w-xl text-left pointer-events-auto">
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.div
+              key={activeScene.id}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{
+                duration: shouldReduceMotion ? 0 : 0.28,
+                ease: [0.16, 1, 0.3, 1],
               }}
-              variant="primary"
-              size="lg"
-              icon={ArrowRight}
-              className="text-xs tracking-widest-luxury font-semibold uppercase hover:bg-ink-blue hover:border-ink-blue transition-colors shadow-md"
             >
-              {activeScene.cta.label}
-            </Button>
-          </div>
+              {/* Category Heading in Spaced Elegant Serif */}
+              <h1 className="font-serif font-normal text-3xl xs:text-4xl sm:text-5xl md:text-6xl text-[#111111] uppercase tracking-[0.16em] leading-tight select-none">
+                {activeScene.shortTitle}
+              </h1>
+
+              {/* Poetic Subtitle matching uploaded reference */}
+              <p className="mt-2 text-xs sm:text-sm md:text-[15px] font-serif italic text-[#111111]/80 tracking-wide font-light">
+                {activeScene.caption.includes('·')
+                  ? activeScene.caption.split('·')[1].trim()
+                  : activeScene.description}
+              </p>
+
+              {/* Understated Hairline Divider */}
+              <div className="w-12 h-px bg-[#111111]/40 my-3.5" aria-hidden="true" />
+
+              {/* Quiet Minimal CTA */}
+              <div className="pt-0.5">
+                <Button
+                  to={activeScene.cta.href}
+                  onClick={(e) => {
+                    if (onExploreClick) {
+                      e.preventDefault();
+                      onExploreClick(activeScene);
+                    }
+                  }}
+                  variant="primary"
+                  size="md"
+                  icon={ArrowRight}
+                  className="text-xs tracking-widest uppercase font-medium"
+                >
+                  {activeScene.cta.label}
+                </Button>
+              </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
 
         {/* Right Column: Thumbnails */}
@@ -304,16 +256,6 @@ export default function Hero({ onExploreClick }) {
           />
         </div>
       </div>
-
-      {/* Frame registration tick marks */}
-      <div
-        className="absolute top-24 left-6 w-2.5 h-2.5 border-t border-l border-charcoal/30 pointer-events-none hidden sm:block"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute top-24 right-6 w-2.5 h-2.5 border-t border-r border-charcoal/30 pointer-events-none hidden sm:block"
-        aria-hidden="true"
-      />
     </section>
   );
 }

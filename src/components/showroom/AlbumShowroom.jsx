@@ -36,34 +36,19 @@ export default function AlbumShowroom({ className = '' }) {
   return (
     <section
       id="3d-album-showroom"
-      className={`relative z-30 bg-white py-14 sm:py-20 lg:py-24 border-b border-charcoal/10 overflow-hidden ${className}`}
+      className={`relative z-30 bg-[#FAF9F6] py-16 sm:py-24 border-b border-[#E5E1DA] overflow-hidden ${className}`}
     >
-      {/* Background Architectural Grid Accent */}
-      <div
-        className="absolute inset-0 opacity-[0.035] pointer-events-none"
-        style={{
-          backgroundImage:
-            'radial-gradient(circle at 1px 1px, #111111 1px, transparent 0)',
-          backgroundSize: '32px 32px',
-        }}
-      />
-
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <FadeIn>
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-14">
             <SectionHeading
-              label="Interactive 3D Showroom"
+              label="Interactive Showroom"
               title="Touch the Craft. Explore the Formats."
-              subtitle="Select any flagship collection to inspect layflat panoramic bindings, archival mat insets, and artisanal cover finishing in full perspective."
+              subtitle="Inspect layflat panoramic bindings, archival mat insets, and artisanal cover finishing in full perspective."
             />
 
             <div className="mt-6 md:mt-0 flex-shrink-0 flex items-center gap-3">
-              <span className="hidden sm:inline-flex items-center gap-1.5 text-xs font-sans uppercase tracking-widest-luxury text-nordic-blue-dark">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>3D Physical Simulation</span>
-              </span>
-
               <Button
                 href={companyInfo.cataloguePdfUrl}
                 target="_blank"
@@ -94,33 +79,10 @@ export default function AlbumShowroom({ className = '' }) {
           })}
         </div>
 
-        {/* Compact Studio Note Information Strip */}
-        <FadeIn delay={0.2} className="mt-6 sm:mt-8">
-          <div className="px-3.5 py-2.5 sm:px-4 sm:py-2 bg-pale-blush/60 border border-charcoal/15 flex flex-col sm:flex-row items-center justify-between text-xs text-charcoal/70 gap-2.5">
-            <div className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-nordic-blue animate-pulse flex-shrink-0" />
-              <span className="font-sans leading-normal">
-                <strong className="font-semibold text-charcoal">Studio Note:</strong> Desktop users can hover to tilt and inspect physical album depth. Click any volume to browse panoramic inside spreads.
-              </span>
-            </div>
-
-            <Button
-              to="/collections"
-              variant="ghost"
-              size="sm"
-              icon={ArrowRight}
-              className="text-xs py-1 whitespace-nowrap flex-shrink-0"
-            >
-              Compare All Technical Specs
-            </Button>
-          </div>
-        </FadeIn>
-
         {/* =========================================================================
             COMPACT COMPLETE CATALOGUE & PRESENTATION SECTION
-            Fits within one desktop viewport (~560-640px height)
            ========================================================================= */}
-        <div className="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-charcoal/10">
+        <div className="mt-14 sm:mt-18 pt-10 sm:pt-14 border-t border-[#E5E1DA]">
           <CompactCatalogue />
         </div>
       </div>

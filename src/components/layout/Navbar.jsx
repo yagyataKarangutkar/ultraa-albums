@@ -159,61 +159,8 @@ export default function Navbar() {
       }`}
     >
       {/* =========================================================================
-          1. SLIM TOP BAR
-          Black or Nordic Blue on Light Grey.
-         ========================================================================= */}
-      <div
-        className={`text-[11px] font-sans border-b py-1.5 px-4 sm:px-8 transition-colors duration-300 ${
-          isHeroOverlaid
-            ? 'bg-light-grey/85 backdrop-blur-xs text-charcoal border-charcoal/10'
-            : 'bg-light-grey text-charcoal border-oak-wood'
-        }`}
-      >
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          {/* Left: Phone & Pro Workshop */}
-          <div className="flex items-center gap-4 sm:gap-6">
-            <span className="hidden md:inline uppercase tracking-wider text-[10px] text-charcoal/60">
-              Mumbai Lab & Bindery
-            </span>
-            <a
-              href={topBarLinks.phoneTel}
-              className="inline-flex items-center gap-1.5 transition-colors font-medium text-charcoal hover:text-nordic-blue"
-              aria-label="Direct Phone Line: +91 93222 54315"
-            >
-              <Phone className="w-3 h-3 text-nordic-blue" />
-              <span>{topBarLinks.phone}</span>
-            </a>
-          </div>
-
-          {/* Right: Messenger & Pay Online */}
-          <div className="flex items-center gap-3 sm:gap-6">
-            <a
-              href={topBarLinks.messengerUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center gap-1.5 transition-colors text-charcoal/80 hover:text-nordic-blue"
-            >
-              <MessageSquare className="w-3 h-3 text-nordic-blue" />
-              <span>Facebook Messenger</span>
-            </a>
-
-            <a
-              href={topBarLinks.payOnlineUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 font-medium transition-colors pl-2.5 sm:pl-3 border-l text-charcoal hover:text-nordic-blue border-charcoal/15 text-[10.5px] sm:text-[11px]"
-            >
-              <CreditCard className="w-3 h-3 text-nordic-blue" />
-              <span>Pay Online</span>
-              <ExternalLink className="w-2.5 h-2.5 text-charcoal/50" />
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* =========================================================================
-          2. MAIN NAVIGATION BAR
-          Typographic brand mark on left (logo removed), links + dropdowns, Enquire Now on right.
+          MAIN NAVIGATION BAR (Minimal Luxury Edition)
+          Clean typographic brand mark, calm spacing, quiet dropdowns.
          ========================================================================= */}
       <header
         className={`w-full transition-all duration-300 border-b ${

@@ -72,21 +72,11 @@ export default function InteriorPageHero({
         decoding="async"
       />
 
-      {/* 2. Cinematic Scrim & Vignette for Contrast & Quiet Luxury Atmosphere */}
+      {/* 2. Cinematic Scrim for Text Contrast */}
       <div
-        className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/55 to-black/40"
+        className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/35"
         aria-hidden="true"
       />
-      <div
-        className="absolute inset-0 bg-black/20 backdrop-blur-[0.5px]"
-        aria-hidden="true"
-      />
-
-      {/* 3. Corner Atelier Registration Ticks */}
-      <span className="absolute top-4 left-4 sm:top-6 sm:left-6 w-3 h-3 border-t border-l border-white/30 pointer-events-none" />
-      <span className="absolute top-4 right-4 sm:top-6 sm:right-6 w-3 h-3 border-t border-r border-white/30 pointer-events-none" />
-      <span className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 w-3 h-3 border-b border-l border-white/30 pointer-events-none" />
-      <span className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 w-3 h-3 border-b border-r border-white/30 pointer-events-none" />
 
       {/* 4. Editorial Content Overlay (Centered & Spacious) */}
       <div className="relative z-10 w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">

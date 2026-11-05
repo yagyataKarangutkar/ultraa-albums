@@ -100,14 +100,13 @@ export default function FormatStage({
                   }}
                 >
                   <span
-                    className="font-serif italic text-[22vw] sm:text-[18vw] lg:text-[14vw] font-light leading-none tracking-tight whitespace-nowrap select-none drop-shadow-xs"
+                    className="font-serif italic text-[22vw] sm:text-[18vw] lg:text-[14vw] font-light leading-none tracking-tight whitespace-nowrap select-none"
                     style={{
                       color: format.textColor,
-                      opacity: isPanelLight ? 0.12 : 0.16,
-                      textShadow: '0 20px 40px rgba(0,0,0,0.04)',
+                      opacity: 0,
                     }}
                   >
-                    {format.watermarkText || 'Albums'}
+                    {format.watermarkText || ''}
                   </span>
                 </div>
 

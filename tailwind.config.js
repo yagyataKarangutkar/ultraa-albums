@@ -7,27 +7,27 @@ export default {
   theme: {
     extend: {
       colors: {
-        // New Colour Theme Tokens
-        'ivory': '#F3F1E8',
-        'soft-grey': '#F1F2F4',
-        'lavender-frame': '#E3E6EF',
-        'sky-wash': '#DEEAF9',
-        'cream-stone': '#DED8C6',
-        'porcelain-blue': '#8096B8',
-        'periwinkle': '#9DADD4',
-        'ink-blue': '#4F6389',
+        // Minimal Luxury Editorial Palette (Warm Off-White, Charcoal, Muted Stone)
+        'ivory': '#FAF9F6',
+        'soft-grey': '#F5F3EE',
+        'lavender-frame': '#F5F3EE',
+        'sky-wash': '#F5F3EE',
+        'cream-stone': '#FAF9F6',
+        'porcelain-blue': '#77736E',
+        'periwinkle': '#77736E',
+        'ink-blue': '#111111',
         'charcoal': '#111111',
-        'muted': '#666666',
+        'muted': '#77736E',
 
-        // Old -> New Mappings (preserving existing Tailwind class roles seamlessly)
-        'light-grey': '#F3F1E8', // Light Grey -> Ivory #F3F1E8
-        'pale-blush': '#F1F2F4', // Pale Blush -> Soft Grey #F1F2F4
-        'oak-wood': '#DED8C6',   // Oak Wood -> Cream Stone #DED8C6
-        'misty-blue': '#DEEAF9', // Misty Blue -> Sky Wash #DEEAF9
+        // Theme Token Mappings — Neutral Luxury System
+        'light-grey': '#FAF9F6', // Serene Warm Ivory
+        'pale-blush': '#F5F3EE', // Soft Editorial Warm Stone
+        'oak-wood': '#E5E1DA',   // Architectural Hairline Divider
+        'misty-blue': '#F5F3EE', // Neutral Canvas
         'nordic-blue': {
-          DEFAULT: '#4F6389',    // Nordic Blue -> Ink Blue #4F6389
-          dark: '#4F6389',       // Ink Blue #4F6389 (WCAG AA 5.4:1 on Ivory, 6.1:1 on White)
-          light: '#8096B8',      // Porcelain Blue #8096B8 (decorative accents)
+          DEFAULT: '#111111',    // Charcoal Default
+          dark: '#111111',       // Charcoal Deep
+          light: '#77736E',      // Muted Warm Grey
         },
       },
       fontFamily: {

@@ -102,33 +102,27 @@ export default function ProductDetail({ defaultSlug }) {
               <div className="lg:col-span-5 flex flex-col justify-between">
                 <FadeIn delay={0.12} direction="right" distance={40}>
                   <div>
-                    {product.tag && (
-                      <span className="inline-block px-2.5 py-1 text-[10px] uppercase font-sans tracking-widest-luxury text-ink-blue bg-light-grey border border-charcoal/10 mb-3">
-                        {product.tag}
-                      </span>
-                    )}
-
                     <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl text-charcoal font-normal">
                       {product.title}
                     </h1>
 
-                    <p className="text-xs uppercase font-sans tracking-wider-luxury text-charcoal/60 mt-1 mb-4">
+                    <p className="text-xs uppercase font-sans tracking-widest text-[#77736E] mt-1 mb-4 font-medium">
                       {product.subtitle}
                     </p>
 
-                    <p className="text-sm text-charcoal/75 font-light leading-relaxed mb-6">
+                    <p className="text-sm text-[#77736E] font-light leading-relaxed mb-6">
                       {product.overview}
                     </p>
 
                     {/* Key Craft Features */}
-                    <div className="py-5 border-t border-b border-charcoal/10">
-                      <h3 className="text-xs font-sans uppercase tracking-widest-luxury text-charcoal font-semibold mb-3">
+                    <div className="py-5 border-t border-b border-[#E5E1DA]">
+                      <h3 className="text-[10px] font-sans uppercase tracking-widest text-[#111111] font-medium mb-3">
                         Craft Specifications
                       </h3>
-                      <ul className="space-y-2.5 text-xs text-charcoal/80 font-light">
+                      <ul className="space-y-2.5 text-xs text-[#77736E] font-light">
                         {product.features.map((feat, idx) => (
                           <li key={idx} className="flex items-start gap-2.5">
-                            <Check className="w-3.5 h-3.5 text-ink-blue flex-shrink-0 mt-0.5" />
+                            <Check className="w-3.5 h-3.5 text-[#111111] flex-shrink-0 mt-0.5" />
                             <span>{feat}</span>
                           </li>
                         ))}
@@ -202,23 +196,23 @@ export default function ProductDetail({ defaultSlug }) {
       )}
 
       {/* Trust Bar */}
-      <section className="bg-light-grey py-12 border-b border-charcoal/10">
+      <section className="bg-[#FAF9F6] py-12 border-b border-[#E5E1DA]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
-            <div className="p-4 bg-white border border-charcoal/10">
-              <ShieldCheck className="w-5 h-5 mx-auto text-ink-blue mb-2" />
-              <h4 className="font-serif text-lg text-charcoal">Archival Warranty</h4>
-              <p className="mt-1 text-xs text-charcoal/60">Rigid unwarping substrate & museum-grade inks</p>
+            <div className="p-6 bg-white border border-[#E5E1DA] rounded-[2px]">
+              <ShieldCheck className="w-4 h-4 mx-auto text-[#111111] mb-2" />
+              <h4 className="font-serif text-lg text-[#111111]">Archival Warranty</h4>
+              <p className="mt-1 text-xs text-[#77736E] font-light">Rigid unwarping substrate & museum-grade inks</p>
             </div>
-            <div className="p-4 bg-white border border-charcoal/10">
-              <Sparkles className="w-5 h-5 mx-auto text-ink-blue mb-2" />
-              <h4 className="font-serif text-lg text-charcoal">Human Layout Proofs</h4>
-              <p className="mt-1 text-xs text-charcoal/60">Digital soft-copy link & unlimited revisions</p>
+            <div className="p-6 bg-white border border-[#E5E1DA] rounded-[2px]">
+              <Sparkles className="w-4 h-4 mx-auto text-[#111111] mb-2" />
+              <h4 className="font-serif text-lg text-[#111111]">Human Layout Proofs</h4>
+              <p className="mt-1 text-xs text-[#77736E] font-light">Digital soft-copy link & unlimited revisions</p>
             </div>
-            <div className="p-4 bg-white border border-charcoal/10">
-              <Clock className="w-5 h-5 mx-auto text-ink-blue mb-2" />
-              <h4 className="font-serif text-lg text-charcoal">Worldwide Air Freight</h4>
-              <p className="mt-1 text-xs text-charcoal/60">Direct to studio doorstep in reinforced cases</p>
+            <div className="p-6 bg-white border border-[#E5E1DA] rounded-[2px]">
+              <Clock className="w-4 h-4 mx-auto text-[#111111] mb-2" />
+              <h4 className="font-serif text-lg text-[#111111]">Worldwide Air Freight</h4>
+              <p className="mt-1 text-xs text-[#77736E] font-light">Direct to studio doorstep in reinforced cases</p>
             </div>
           </div>
         </div>

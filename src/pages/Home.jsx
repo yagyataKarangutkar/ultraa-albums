@@ -1,30 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Download, CheckCircle, Globe, ShieldCheck, BadgePercent, HeartHandshake, Phone, ArrowUpRight } from 'lucide-react';
+import { ArrowRight, Download, Phone } from 'lucide-react';
 import Button from '../components/common/Button';
 import SectionHeading from '../components/common/SectionHeading';
-import SectionLabel from '../components/common/SectionLabel';
-import ImagePlaceholder from '../components/common/ImagePlaceholder';
-import ProductCard from '../components/common/ProductCard';
 import FadeIn from '../components/common/FadeIn';
 import Hero from '../components/hero/Hero';
 import SignatureFormats from '../components/formats/SignatureFormats';
 import AlbumShowroom from '../components/showroom/AlbumShowroom';
 
-import { products } from '../data/products';
 import { services } from '../data/services';
-import { advantages } from '../data/advantages';
-import { processSteps } from '../data/process';
-import { testimonials, testimonialsPlaceholderMeta } from '../data/testimonials';
 import { companyInfo } from '../data/company';
 
 export default function Home() {
-  const advantageIcons = {
-    Globe: Globe,
-    BadgePercent: BadgePercent,
-    ShieldCheck: ShieldCheck,
-    HeartHandshake: HeartHandshake,
-  };
 
   return (
     <div className="w-full relative bg-light-grey">
@@ -48,65 +35,62 @@ export default function Home() {
       <AlbumShowroom />
 
       {/* =========================================================================
-          SECTION 4: SERVICES
-          Album Designing, Image Editing, Wedding Photography
+          SECTION 4: BESPOKE STUDIO SERVICES
+          Editorial 3-column layout with authentic wedding imagery
          ========================================================================= */}
-      <section className="relative z-30 bg-soft-grey py-14 sm:py-20 lg:py-28 border-b border-charcoal/10 overflow-hidden">
+      <section className="relative z-30 bg-white py-16 sm:py-24 border-b border-[#E5E1DA] overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <div className="max-w-3xl mb-14">
-              <SectionHeading
-                label="Full Pro Studio Support"
-                title="End-to-End Design & Post-Production"
-                subtitle="Eliminate layout bottlenecks. Let our human layout artists and digital darkroom specialists prepare your client deliveries."
-              />
+            <div className="max-w-2xl mb-12 sm:mb-16">
+              <span className="text-[10px] uppercase font-sans tracking-widest text-[#77736E] font-medium block mb-2">
+                Atelier Services
+              </span>
+              <h2 className="font-serif text-3xl sm:text-4xl text-[#111111] font-normal leading-tight">
+                Design & Post-Production for Visual Storytellers
+              </h2>
+              <p className="mt-3 text-sm text-[#77736E] font-light leading-relaxed">
+                Dedicated layout artists and color specialists supporting wedding studios worldwide.
+              </p>
             </div>
           </FadeIn>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-12">
             {services.map((service, idx) => {
               const cardDirection = idx === 0 ? 'left' : idx === 1 ? 'up' : 'right';
               return (
-                <FadeIn key={service.id} delay={idx * 0.08} direction={cardDirection} distance={36}>
-                  <div className="bg-white border border-charcoal/15 p-8 flex flex-col justify-between h-full rounded-[2px] transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl hover:border-charcoal/40 group">
+                <FadeIn key={service.id} delay={idx * 0.08} direction={cardDirection} distance={28}>
+                  <div className="group flex flex-col justify-between h-full">
                     <div>
-                      <div className="flex items-center justify-between mb-4">
-                        <span className="text-[10px] uppercase font-sans tracking-widest-luxury text-nordic-blue-dark font-semibold bg-light-grey px-2.5 py-1 border border-charcoal/10 transition-colors group-hover:border-charcoal/25">
-                          {service.badge}
-                        </span>
-                      </div>
-
-                      <h3 className="font-serif text-2xl text-charcoal group-hover:text-black transition-colors">{service.title}</h3>
-
-                      <p className="mt-3 text-xs sm:text-sm text-charcoal/70 leading-relaxed font-light">
-                        {service.shortDescription}
-                      </p>
-
-                      <div className="my-6 overflow-hidden rounded-[1px] transition-transform duration-500 ease-out group-hover:scale-[1.02]">
-                        <ImagePlaceholder
+                      <div className="overflow-hidden rounded-[1px] mb-5 border border-[#E5E1DA]">
+                        <img
                           src={service.image}
                           alt={service.alt || service.title}
-                          subject={service.placeholderSubject}
-                          aspect="16/9"
-                          tone="misty"
-                          showBadge={false}
+                          className="w-full aspect-[16/10] object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                          loading="lazy"
                         />
                       </div>
 
-                      <ul className="space-y-2 mt-4 text-xs text-charcoal/80 font-light">
-                        {service.features.slice(0, 3).map((feat, fIdx) => (
-                          <li key={fIdx} className="flex items-start gap-2">
-                            <CheckCircle className="w-3.5 h-3.5 text-nordic-blue-dark flex-shrink-0 mt-0.5 transition-transform duration-200 group-hover:scale-110" />
-                            <span>{feat}</span>
-                          </li>
-                        ))}
-                      </ul>
+                      <span className="text-[9.5px] uppercase font-sans tracking-widest text-[#77736E] font-medium block mb-1">
+                        {service.badge}
+                      </span>
+
+                      <h3 className="font-serif text-2xl text-[#111111] group-hover:text-black transition-colors">
+                        {service.title}
+                      </h3>
+
+                      <p className="mt-2.5 text-xs sm:text-[13px] text-[#77736E] leading-relaxed font-light">
+                        {service.shortDescription}
+                      </p>
                     </div>
 
-                    <div className="mt-8 pt-6 border-t border-charcoal/10">
-                      <Button to="/services" variant="ghost" size="sm" icon={ArrowRight}>
-                        Explore Service Details
-                      </Button>
+                    <div className="mt-6 pt-4 border-t border-[#E5E1DA]/60">
+                      <Link
+                        to="/services"
+                        className="inline-flex items-center gap-1.5 text-xs font-sans uppercase tracking-wider text-[#111111] hover:text-[#77736E] transition-colors font-medium"
+                      >
+                        <span>Explore Service</span>
+                        <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+                      </Link>
                     </div>
                   </div>
                 </FadeIn>
@@ -117,231 +101,152 @@ export default function Home() {
       </section>
 
       {/* =========================================================================
-          SECTION 4: ABOUT ULTRA ALBUMS (Mumbai Lab & Heritage)
+          SECTION 5: THE WORKSHOP & CRAFTSMANSHIP
+          One strong brand statement + authentic Mumbai bindery photography
          ========================================================================= */}
-      <section className="relative z-30 bg-white py-14 sm:py-20 lg:py-28 border-b border-charcoal/10">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <SectionLabel withLine theme="light" className="mb-3">
-              The Workshop
-            </SectionLabel>
+      <section className="relative z-30 bg-[#FAF9F6] py-16 sm:py-24 border-b border-[#E5E1DA]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            {/* Left Story Column */}
+            <div className="lg:col-span-6 space-y-5 text-sm sm:text-base text-[#77736E] font-light leading-relaxed">
+              <FadeIn direction="left" distance={32}>
+                <span className="text-[10px] uppercase font-sans tracking-widest text-[#77736E] font-medium block mb-2">
+                  The Workshop
+                </span>
 
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-charcoal font-normal leading-tight">
-              Handcrafted in Mumbai for Professional Photographers Worldwide.
+                <h2 className="font-serif text-3xl sm:text-4xl text-[#111111] font-normal leading-tight">
+                  Handcrafted in Mumbai for Professional Photographers Worldwide.
+                </h2>
+
+                <p className="pt-2">
+                  Ultra Albums manufactures bespoke wedding albums, flush mount books, and presentation cases from our dedicated bindery in Dahisar East, Mumbai.
+                </p>
+
+                <p>
+                  Rather than relying on automated assembly lines, our craftspeople hand-score every fold, hand-apply reinforced library-grade cloth spines, and inspect every print under calibrated 5000K daylight illumination.
+                </p>
+
+                <div className="pt-4 flex items-center gap-4">
+                  <Button to="/about-us" variant="primary" size="md">
+                    Read Our Story
+                  </Button>
+                  <Button
+                    href={companyInfo.cataloguePdfUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variant="outline"
+                    size="md"
+                    icon={Download}
+                  >
+                    Catalogue PDF
+                  </Button>
+                </div>
+              </FadeIn>
+            </div>
+
+            {/* Right Photography Column */}
+            <div className="lg:col-span-6">
+              <FadeIn delay={0.12} direction="right" distance={32}>
+                <div className="border border-[#E5E1DA] bg-white p-2 rounded-[2px] shadow-sm overflow-hidden group">
+                  <div className="overflow-hidden rounded-[1px]">
+                    <img
+                      src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80"
+                      alt="Artisanal bookbinder inspecting handcrafted leather spine and foil debossing in workshop"
+                      className="w-full aspect-[4/3] object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="py-2.5 text-center text-[10px] uppercase font-sans tracking-widest text-[#77736E]">
+                    Dahisar East Bindery • Handcrafted Quality Control
+                  </div>
+                </div>
+              </FadeIn>
+            </div>
+          </div>
+
+          {/* 4 Quiet Craft Standards */}
+          <div className="mt-16 pt-12 border-t border-[#E5E1DA] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <FadeIn delay={0.05} direction="up" distance={20}>
+              <div>
+                <span className="font-serif text-lg text-[#111111] block mb-1">01 / Archival Core</span>
+                <p className="text-xs text-[#77736E] font-light leading-relaxed">
+                  Rigid unwarping composite substrates with silver halide fine-art papers.
+                </p>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={0.1} direction="up" distance={20}>
+              <div>
+                <span className="font-serif text-lg text-[#111111] block mb-1">02 / Seamless Layflat</span>
+                <p className="text-xs text-[#77736E] font-light leading-relaxed">
+                  180° uninterrupted panoramic spreads with hand-scored micro-creases.
+                </p>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={0.15} direction="up" distance={20}>
+              <div>
+                <span className="font-serif text-lg text-[#111111] block mb-1">03 / Human Proofing</span>
+                <p className="text-xs text-[#77736E] font-light leading-relaxed">
+                  Dedicated in-house designers preparing digital soft-copy proofs with unlimited revisions.
+                </p>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={0.2} direction="up" distance={20}>
+              <div>
+                <span className="font-serif text-lg text-[#111111] block mb-1">04 / Global Dispatch</span>
+                <p className="text-xs text-[#77736E] font-light leading-relaxed">
+                  Express air courier delivery in reinforced shockproof cases to studios worldwide.
+                </p>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================================
+          SECTION 6: FINAL INVITATION
+          Calm, confident, editorial CTA
+         ========================================================================= */}
+      <section className="bg-white py-16 sm:py-24 border-b border-[#E5E1DA]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <FadeIn direction="up" distance={30}>
+            <span className="text-[10px] uppercase font-sans tracking-widest text-[#77736E] font-medium block mb-2">
+              Commission an Heirloom
+            </span>
+
+            <h2 className="font-serif text-3xl sm:text-5xl text-[#111111] font-normal leading-tight">
+              Ready to elevate your studio deliverables?
             </h2>
 
-            <div className="mt-6 space-y-4 text-sm sm:text-base text-charcoal/75 font-light leading-relaxed">
-              <p>
-                Ultra Albums manufactures bespoke wedding albums, flush mount books, and presentation cases from our dedicated production facility in Dahisar East, Mumbai.
-              </p>
-              <p>
-                Rather than relying on automated assembly lines, our craftspeople hand-score every fold, hand-apply reinforced library-grade cloth spines, and inspect every print under calibrated 5000K daylight illumination.
-              </p>
-              <p>
-                From independent destination photographers to high-volume studios across India, the UK, the US, and Europe, we provide personal layout design, seamless proofing, and reliable global delivery.
-              </p>
-            </div>
+            <p className="mt-4 text-sm sm:text-base text-[#77736E] font-light max-w-xl mx-auto leading-relaxed">
+              Order a custom studio sample kit with genuine leather swatches or contact our Mumbai production desk for bespoke pricing.
+            </p>
 
-            <div className="mt-8 p-4 bg-oak-wood/30 border border-charcoal/15 text-xs text-charcoal/70">
-              <p className="font-medium text-charcoal uppercase tracking-wider-luxury text-[11px] mb-1">
-                Authenticity Note & Client Claims:
-              </p>
-              <p>
-                {companyInfo.statsClaims.yearsInBusiness} & {companyInfo.statsClaims.photographersServed}. We verify all technical capabilities directly with production.
-              </p>
-            </div>
-
-            <div className="mt-8 flex items-center gap-4">
-              <Button to="/about-us" variant="primary" size="md">
-                Read Our Story
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button to="/contact-us" variant="primary" size="lg" icon={ArrowRight}>
+                Request Studio Sample
               </Button>
+
               <Button
                 href={companyInfo.cataloguePdfUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 variant="outline"
-                size="md"
+                size="lg"
                 icon={Download}
               >
                 Catalogue PDF
               </Button>
             </div>
-          </FadeIn>
-        </div>
-      </section>
 
-      {/* =========================================================================
-          SECTION 5: WHY ULTRA ALBUMS (4 Confirmed Points)
-         ========================================================================= */}
-      <section className="bg-light-grey py-14 sm:py-20 lg:py-28 border-b border-charcoal/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <div className="text-center max-w-2xl mx-auto mb-16">
-              <SectionHeading
-                align="center"
-                label="The Pro Advantage"
-                title="Why Professional Studios Partner With Us"
-                subtitle="Engineered to protect your studio reputation, reduce turnaround headaches, and elevate client unboxing."
-              />
-            </div>
-          </FadeIn>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {advantages.map((adv, idx) => {
-              const Icon = advantageIcons[adv.icon] || ShieldCheck;
-              const advDirection = idx % 2 === 0 ? 'left' : 'right';
-              return (
-                <FadeIn key={adv.step} delay={idx * 0.08} direction={advDirection} distance={28}>
-                  <div className="bg-white border border-charcoal/15 p-7 flex flex-col justify-between h-full rounded-[2px] transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-lg hover:border-charcoal/40 group">
-                    <div>
-                      <div className="flex items-center justify-between mb-5">
-                        <span className="font-serif text-2xl text-nordic-blue-dark transition-transform duration-300 group-hover:scale-110">
-                          {adv.step}
-                        </span>
-                        <div className="w-9 h-9 rounded-full bg-light-grey flex items-center justify-center text-charcoal/80 transition-colors duration-300 group-hover:bg-charcoal group-hover:text-white">
-                          <Icon className="w-4 h-4" strokeWidth={1.5} />
-                        </div>
-                      </div>
-
-                      <h3 className="font-serif text-xl text-charcoal group-hover:text-black transition-colors">{adv.title}</h3>
-                      <p className="text-[11px] font-sans uppercase tracking-wider-luxury text-charcoal/50 mt-1 mb-3">
-                        {adv.subtitle}
-                      </p>
-
-                      <p className="text-xs sm:text-sm text-charcoal/70 font-light leading-relaxed">
-                        {adv.description}
-                      </p>
-                    </div>
-                  </div>
-                </FadeIn>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================================================
-          SECTION 6: HOW IT WORKS (4 Process Steps)
-         ========================================================================= */}
-      <section className="bg-white py-14 sm:py-20 lg:py-28 border-b border-charcoal/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <div className="max-w-3xl mb-16">
-              <SectionHeading
-                label="Streamlined Workflow"
-                title="How It Works: From Capture to Delivery"
-                subtitle="Four clear steps connecting your digital files to a museum-grade heirloom on your client's coffee table."
-              />
-            </div>
-          </FadeIn>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
-            {processSteps.map((step, idx) => (
-              <FadeIn key={step.step} delay={idx * 0.1} direction="up" distance={32}>
-                <div className="relative flex flex-col h-full border-t-2 border-charcoal/20 pt-6 transition-all duration-300 hover:border-charcoal group">
-                  <span className="font-serif text-3xl sm:text-4xl text-charcoal/30 mb-3 font-normal transition-colors duration-300 group-hover:text-charcoal">
-                    {step.step}
-                  </span>
-
-                  <h3 className="font-serif text-xl text-charcoal mb-2 group-hover:text-black transition-colors">{step.title}</h3>
-
-                  <p className="text-xs text-charcoal/80 font-medium mb-2 leading-snug">
-                    {step.summary}
-                  </p>
-
-                  <p className="text-xs text-charcoal/65 font-light leading-relaxed">
-                    {step.details}
-                  </p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================================================
-          SECTION 7: TESTIMONIALS (DELIBERATE EMPTY STATE)
-          Strictly avoids fabricating reviews or photographer names.
-         ========================================================================= */}
-      <section className="bg-oak-wood/30 py-20 sm:py-28 border-b border-charcoal/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <div className="text-center max-w-2xl mx-auto mb-10">
-              <SectionHeading
-                align="center"
-                label={testimonialsPlaceholderMeta.heading}
-                title={testimonialsPlaceholderMeta.subheading}
-              />
-            </div>
-          </FadeIn>
-
-          <FadeIn delay={0.1} direction="scale">
-            <div className="max-w-2xl mx-auto bg-white border border-charcoal/15 p-8 sm:p-12 text-center rounded-[2px] shadow-sm hover:shadow-md transition-shadow duration-300">
-              <span className="inline-block px-3 py-1 bg-light-grey text-[10px] uppercase font-sans tracking-widest-luxury text-charcoal/60 border border-charcoal/10 mb-4">
-                Client Content Review Pending
-              </span>
-
-              <h3 className="font-serif text-2xl text-charcoal">
-                {testimonialsPlaceholderMeta.emptyStateTitle}
-              </h3>
-
-              <p className="mt-3 text-xs sm:text-sm text-charcoal/70 font-light leading-relaxed">
-                {testimonialsPlaceholderMeta.emptyStateDescription}
-              </p>
-
-              <div className="mt-6 pt-6 border-t border-charcoal/10 text-[11px] text-charcoal/50 font-sans">
-                {testimonialsPlaceholderMeta.note}
-              </div>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* =========================================================================
-          SECTION 8: FINAL CTA
-         ========================================================================= */}
-      <section className="bg-charcoal text-white py-20 sm:py-28 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <FadeIn direction="up" distance={40}>
-            <div className="max-w-3xl mx-auto">
-              <SectionLabel theme="dark" withLine className="mb-4">
-                Partner With Ultra Albums
-              </SectionLabel>
-
-              <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl text-white font-normal leading-tight">
-                Ready to elevate your studio deliverables?
-              </h2>
-
-              <p className="mt-6 text-sm sm:text-base text-white/70 font-light max-w-xl mx-auto leading-relaxed">
-                Download our complete product catalogue or contact our Mumbai production desk for sample swatch kits and custom pricing.
-              </p>
-
-              <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Button to="/contact-us" variant="white" size="lg" icon={ArrowRight} className="hover:scale-[1.02] transition-transform">
-                  Request Studio Sample
-                </Button>
-
-                <Button
-                  href={companyInfo.cataloguePdfUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  variant="outline"
-                  size="lg"
-                  className="text-white border-white/40 hover:bg-white/10 hover:border-white transition-all"
-                  icon={Download}
-                >
-                  Download Catalogue PDF
-                </Button>
-              </div>
-
-              <div className="mt-8 flex items-center justify-center gap-2 text-xs text-misty-blue">
-                <Phone className="w-3.5 h-3.5 animate-pulse" />
-                <span>Direct Mumbai Lab Line:</span>
-                <a href={companyInfo.phoneTel} className="text-white hover:underline font-medium">
-                  {companyInfo.phone}
-                </a>
-              </div>
-            </div>
+            <p className="mt-6 text-xs text-[#77736E] font-light">
+              Direct Mumbai Atelier Desk:{' '}
+              <a href={companyInfo.phoneTel} className="text-[#111111] hover:underline font-medium">
+                {companyInfo.phone}
+              </a>
+            </p>
           </FadeIn>
         </div>
       </section>

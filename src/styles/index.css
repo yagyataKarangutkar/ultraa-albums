@@ -3,26 +3,26 @@
 @tailwind utilities;
 
 :root {
-  /* New Colour Theme Tokens */
-  --color-ivory: #F3F1E8;
-  --color-soft-grey: #F1F2F4;
-  --color-lavender-frame: #E3E6EF;
-  --color-sky-wash: #DEEAF9;
-  --color-cream-stone: #DED8C6;
-  --color-porcelain-blue: #8096B8;
-  --color-periwinkle: #9DADD4;
-  --color-ink-blue: #4F6389;
+  /* Minimal Luxury Neutral Tokens */
+  --color-ivory: #FAF9F6;
+  --color-soft-grey: #F5F3EE;
+  --color-lavender-frame: #F5F3EE;
+  --color-sky-wash: #FAF9F6;
+  --color-cream-stone: #FAF9F6;
+  --color-porcelain-blue: #77736E;
+  --color-periwinkle: #77736E;
+  --color-ink-blue: #111111;
   --color-black: #111111;
   --color-white: #FFFFFF;
-  --color-muted: #666666;
+  --color-muted: #77736E;
 
-  /* Backward-compatible CSS variables mapped to new theme values */
-  --color-misty-blue: #DEEAF9;
-  --color-light-grey: #F3F1E8;
-  --color-pale-blush: #F1F2F4;
-  --color-oak-wood: #DED8C6;
-  --color-nordic-blue: #4F6389;
-  --color-nordic-blue-dark: #4F6389;
+  /* Backward-compatible CSS variables mapped to minimal luxury */
+  --color-misty-blue: #FAF9F6;
+  --color-light-grey: #FAF9F6;
+  --color-pale-blush: #F5F3EE;
+  --color-oak-wood: #E5E1DA;
+  --color-nordic-blue: #111111;
+  --color-nordic-blue-dark: #111111;
 }
 
 @layer base {

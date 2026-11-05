@@ -16,15 +16,15 @@ export default function ProductCard({
   const { slug, title, subtitle, shortDescription, placeholderSubject, tag } = product;
 
   return (
-    <article className={`group flex flex-col bg-white border border-charcoal/10 transition-all duration-300 ease-out hover:border-charcoal/40 hover:-translate-y-1 hover:shadow-lg rounded-[2px] ${className}`}>
+    <article className={`group flex flex-col bg-white border border-[#E5E1DA] transition-all duration-300 ease-out hover:border-[#111111]/30 hover:-translate-y-1 hover:shadow-md rounded-[2px] ${className}`}>
       {/* Product Image Area */}
       <Link
         to={`/collections/${slug}`}
-        className="block overflow-hidden relative focus:outline-none focus:ring-2 focus:ring-nordic-blue"
+        className="block overflow-hidden relative focus:outline-none"
         tabIndex={-1}
         aria-hidden="true"
       >
-        <div className="transition-transform duration-500 ease-out group-hover:scale-105">
+        <div className="transition-transform duration-700 ease-out group-hover:scale-105">
           <ImagePlaceholder
             src={product.image}
             alt={product.alt || `${title} presentation`}
@@ -34,42 +34,36 @@ export default function ProductCard({
             showBadge={false}
           />
         </div>
-
-        {tag && (
-          <span className="absolute top-3 left-3 bg-white/95 px-2.5 py-1 text-[10px] uppercase font-sans tracking-widest-luxury text-charcoal border border-charcoal/10 shadow-2xs transition-transform duration-300 group-hover:translate-x-0.5">
-            {tag}
-          </span>
-        )}
       </Link>
 
       {/* Content Area */}
       <div className="p-6 flex flex-col flex-1 justify-between bg-white">
         <div>
           {subtitle && (
-            <p className="text-[11px] font-sans uppercase tracking-wider-luxury text-nordic-blue-dark mb-1.5 transition-colors group-hover:text-black">
+            <p className="text-[10px] font-sans uppercase tracking-widest text-[#77736E] mb-1.5 font-medium">
               {subtitle}
             </p>
           )}
 
-          <h3 className="font-serif text-2xl text-charcoal group-hover:text-black transition-colors">
+          <h3 className="font-serif text-2xl text-[#111111] group-hover:text-black transition-colors font-normal">
             <Link
               to={`/collections/${slug}`}
-              className="focus:outline-none focus:ring-2 focus:ring-nordic-blue rounded-none"
+              className="focus:outline-none"
             >
               {title}
             </Link>
           </h3>
 
-          <p className="mt-2 text-xs sm:text-sm text-charcoal/70 font-light leading-relaxed line-clamp-2">
+          <p className="mt-2 text-xs sm:text-[13px] text-[#77736E] font-light leading-relaxed line-clamp-2">
             {shortDescription}
           </p>
         </div>
 
         {/* Link / CTA */}
-        <div className="mt-5 pt-4 border-t border-charcoal/10 flex items-center justify-between">
+        <div className="mt-5 pt-4 border-t border-[#E5E1DA] flex items-center justify-between">
           <Link
             to={`/collections/${slug}`}
-            className="inline-flex items-center gap-1.5 text-xs font-sans tracking-wider-luxury uppercase text-charcoal group-hover:text-black transition-colors font-medium"
+            className="inline-flex items-center gap-1.5 text-xs font-sans tracking-wider uppercase text-[#111111] group-hover:text-black transition-colors font-medium"
           >
             <span>View Specifications</span>
             <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 ease-out group-hover:translate-x-1 group-hover:-translate-y-1" />

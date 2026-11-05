@@ -20,7 +20,7 @@ export const FORMAT_FAMILIES = [
     subtitle: "Self-Mount Window Portfolio",
     description:
       "Classic slip-in pocket albums crafted with archival mats for instant studio print assembly. Features bevelled frames that protect prints with zero adhesives required.",
-    bgColor: "#F1F2F4", // Soft Grey
+    bgColor: "#FAF9F6", // Warm Ivory
     textColor: "#111111", // Black
     theme: "dark-text",
     specs: {
@@ -41,7 +41,7 @@ export const FORMAT_FAMILIES = [
       edgeStyle: "clean",
     },
     alt: "Handcrafted black buckram slip-in photo album featuring a bevelled cameo window portrait",
-    watermarkText: "Folio",
+    watermarkText: "",
     ctaHref: "/collections/slip-in-albums",
     enquirePrefill: "Slip-in Albums",
   },
@@ -52,7 +52,7 @@ export const FORMAT_FAMILIES = [
     subtitle: "Architectural 180° Panoramic Rigidity",
     description:
       "Rigid unbending pages mounted edge-to-edge onto durable archival cores for ultra-crisp photographic impact. Opens completely flat for seamless panoramic storytelling.",
-    bgColor: "#DEEAF9", // Sky Wash
+    bgColor: "#F5F3EE", // Soft Luxury Stone
     textColor: "#111111", // Black
     theme: "dark-text",
     specs: {
@@ -72,7 +72,7 @@ export const FORMAT_FAMILIES = [
       edgeStyle: "rigid-white",
     },
     alt: "Architectural flush mount album showing thick rigid core pages and seamless 180-degree layflat hinge",
-    watermarkText: "Panoramic",
+    watermarkText: "",
     ctaHref: "/collections/flush-mount-album",
     enquirePrefill: "Flush Mount Albums",
   },
@@ -83,7 +83,7 @@ export const FORMAT_FAMILIES = [
     subtitle: "Flexible Lightweight Fine Art Volume",
     description:
       "Refined flexible-page volumes designed for parent albums, guest books, and editorial portrait sessions. Sleek contemporary profile with museum-grade digital offset prints.",
-    bgColor: "#DED8C6", // Cream Stone
+    bgColor: "#FAF9F6", // Warm Ivory
     textColor: "#111111", // Black
     theme: "dark-text",
     specs: {
@@ -103,7 +103,7 @@ export const FORMAT_FAMILIES = [
       edgeStyle: "clean-paper",
     },
     alt: "Minimalist oatmeal linen hardcover photo book with clean trimmed paper block",
-    watermarkText: "Editorial",
+    watermarkText: "",
     ctaHref: "/collections/photo-book",
     enquirePrefill: "Photo Book",
   },
@@ -114,9 +114,9 @@ export const FORMAT_FAMILIES = [
     subtitle: "Bespoke Tuscan Leather & Gilded Heirloom",
     description:
       "The flagship heirloom collection bound in genuine top-grain leather, acrylic cameos, and opulent velvet. Engineered for legacy wedding presentations to last generations.",
-    bgColor: "#4F6389", // Ink Blue
-    textColor: "#FFFFFF", // White
-    theme: "light-text",
+    bgColor: "#F5F3EE", // Soft Luxury Stone
+    textColor: "#111111", // Black
+    theme: "dark-text",
     specs: {
       formatType: "Hand-Bound Leather Master Volume",
       sizes: ["10 × 10 in", "12 × 12 in", "11 × 14 in", "12 × 18 in"],
@@ -134,7 +134,7 @@ export const FORMAT_FAMILIES = [
       edgeStyle: "gilded-gold",
     },
     alt: "Handcrafted cognac leather luxury wedding album with gold foil debossing and gilded page edges",
-    watermarkText: "Heirloom",
+    watermarkText: "",
     ctaHref: "/collections/luxury-albums",
     enquirePrefill: "Luxury Leather Albums",
   },
