@@ -116,76 +116,54 @@ export default function Home() {
       {/* =========================================================================
           SECTION 4: ABOUT ULTRA ALBUMS (Mumbai Lab & Heritage)
          ========================================================================= */}
-      <section className="relative z-20 bg-white py-20 sm:py-28 border-b border-charcoal/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div className="lg:col-span-6">
-              <FadeIn>
-                <SectionLabel withLine theme="light" className="mb-3">
-                  The Workshop
-                </SectionLabel>
+      <section className="relative z-30 bg-white py-20 sm:py-28 border-b border-charcoal/10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <SectionLabel withLine theme="light" className="mb-3">
+              The Workshop
+            </SectionLabel>
 
-                <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-charcoal font-normal leading-tight">
-                  Handcrafted in Mumbai for Professional Photographers Worldwide.
-                </h2>
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl text-charcoal font-normal leading-tight">
+              Handcrafted in Mumbai for Professional Photographers Worldwide.
+            </h2>
 
-                <div className="mt-6 space-y-4 text-sm sm:text-base text-charcoal/75 font-light leading-relaxed">
-                  <p>
-                    Ultra Albums manufactures bespoke wedding albums, flush mount books, and presentation cases from our dedicated production facility in Dahisar East, Mumbai.
-                  </p>
-                  <p>
-                    Rather than relying on automated assembly lines, our craftspeople hand-score every fold, hand-apply reinforced library-grade cloth spines, and inspect every print under calibrated 5000K daylight illumination.
-                  </p>
-                  <p>
-                    From independent destination photographers to high-volume studios across India, the UK, the US, and Europe, we provide personal layout design, seamless proofing, and reliable global delivery.
-                  </p>
-                </div>
-
-                <div className="mt-8 p-4 bg-oak-wood/30 border border-charcoal/15 text-xs text-charcoal/70">
-                  <p className="font-medium text-charcoal uppercase tracking-wider-luxury text-[11px] mb-1">
-                    Authenticity Note & Client Claims:
-                  </p>
-                  <p>
-                    {companyInfo.statsClaims.yearsInBusiness} & {companyInfo.statsClaims.photographersServed}. We verify all technical capabilities directly with production.
-                  </p>
-                </div>
-
-                <div className="mt-8 flex items-center gap-4">
-                  <Button to="/about-us" variant="primary" size="md">
-                    Read Our Story
-                  </Button>
-                  <Button
-                    href={companyInfo.cataloguePdfUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    variant="outline"
-                    size="md"
-                    icon={Download}
-                  >
-                    Catalogue PDF
-                  </Button>
-                </div>
-              </FadeIn>
+            <div className="mt-6 space-y-4 text-sm sm:text-base text-charcoal/75 font-light leading-relaxed">
+              <p>
+                Ultra Albums manufactures bespoke wedding albums, flush mount books, and presentation cases from our dedicated production facility in Dahisar East, Mumbai.
+              </p>
+              <p>
+                Rather than relying on automated assembly lines, our craftspeople hand-score every fold, hand-apply reinforced library-grade cloth spines, and inspect every print under calibrated 5000K daylight illumination.
+              </p>
+              <p>
+                From independent destination photographers to high-volume studios across India, the UK, the US, and Europe, we provide personal layout design, seamless proofing, and reliable global delivery.
+              </p>
             </div>
 
-            <div className="lg:col-span-6">
-              <FadeIn delay={0.2}>
-                <div className="relative p-3 bg-light-grey border border-charcoal/15">
-                  <ImagePlaceholder
-                    src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1200&q=80"
-                    alt="Master bookbinder inspecting hand-stitched leather spine in Mumbai bindery"
-                    subject="Master bookbinder inspecting hand-stitched leather spine and foil debossing under workshop lamp"
-                    aspect="4/3"
-                    tone="oak"
-                    className="w-full"
-                  />
-                  <div className="mt-3 text-center text-xs font-serif italic text-charcoal/60">
-                    Artisanal binding, rigid cores & archival silver halide papers
-                  </div>
-                </div>
-              </FadeIn>
+            <div className="mt-8 p-4 bg-oak-wood/30 border border-charcoal/15 text-xs text-charcoal/70">
+              <p className="font-medium text-charcoal uppercase tracking-wider-luxury text-[11px] mb-1">
+                Authenticity Note & Client Claims:
+              </p>
+              <p>
+                {companyInfo.statsClaims.yearsInBusiness} & {companyInfo.statsClaims.photographersServed}. We verify all technical capabilities directly with production.
+              </p>
             </div>
-          </div>
+
+            <div className="mt-8 flex items-center gap-4">
+              <Button to="/about-us" variant="primary" size="md">
+                Read Our Story
+              </Button>
+              <Button
+                href={companyInfo.cataloguePdfUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="outline"
+                size="md"
+                icon={Download}
+              >
+                Catalogue PDF
+              </Button>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
