@@ -37,13 +37,13 @@ export default function Album3DProduct({
 
   // GSAP quickTo and hover motion setup
   useEffect(() => {
-    if (isTouch || !containerRef.current || !bookRef.current || !shadowRef.current) return;
+    if (!containerRef.current || !bookRef.current || !shadowRef.current) return;
 
     const container = containerRef.current;
     const book = bookRef.current;
     const shadow = shadowRef.current;
 
-    // Default resting transform
+    // Default resting transform (applied on all devices including mobile)
     gsap.set(book, {
       rotateX: 14,
       rotateY: -10,
@@ -58,6 +58,8 @@ export default function Album3DProduct({
       y: 0,
       filter: 'blur(10px)',
     });
+
+    if (isTouch) return;
 
     // Initialize gsap.quickTo pipes
     rotateYTo.current = gsap.quickTo(book, 'rotateY', { duration: 0.45, ease: 'power2.out' });
@@ -161,7 +163,7 @@ export default function Album3DProduct({
     <div
       ref={containerRef}
       onClick={() => onSelect(album, containerRef.current)}
-      className="group relative flex flex-col items-center justify-between cursor-pointer select-none py-4 px-2"
+      className="group relative flex flex-col items-center justify-between cursor-pointer select-none py-4 px-2 w-full max-w-[280px] sm:max-w-[310px] mx-auto"
       role="button"
       tabIndex={0}
       onKeyDown={(e) => {

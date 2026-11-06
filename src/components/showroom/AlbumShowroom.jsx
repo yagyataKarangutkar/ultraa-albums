@@ -39,16 +39,22 @@ export default function AlbumShowroom({ className = '' }) {
       className={`relative z-30 bg-[#FAF9F6] py-16 sm:py-24 border-b border-[#E5E1DA] overflow-hidden ${className}`}
     >
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+        {/* Section Header — Centered on mobile, balanced split on desktop */}
         <FadeIn>
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-14">
-            <SectionHeading
-              label="Interactive Showroom"
-              title="Touch the Craft. Explore the Formats."
-              subtitle="Inspect layflat panoramic bindings, archival mat insets, and artisanal cover finishing in full perspective."
-            />
+          <div className="flex flex-col items-center text-center md:flex-row md:items-end md:justify-between md:text-left mb-10 sm:mb-14">
+            <div className="flex flex-col items-center text-center md:items-start md:text-left max-w-2xl">
+              <span className="text-[10px] uppercase font-sans tracking-widest text-[#77736E] font-medium block mb-2">
+                Interactive Showroom
+              </span>
+              <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal text-[#111111] leading-tight">
+                Touch the Craft. Explore the Formats.
+              </h2>
+              <p className="mt-3 text-xs sm:text-sm md:text-base text-[#77736E] font-light leading-relaxed max-w-xl">
+                Inspect layflat panoramic bindings, archival mat insets, and artisanal cover finishing in full perspective.
+              </p>
+            </div>
 
-            <div className="mt-6 md:mt-0 flex-shrink-0 flex items-center gap-3">
+            <div className="mt-6 md:mt-0 flex-shrink-0 flex items-center justify-center gap-3">
               <Button
                 href={companyInfo.cataloguePdfUrl}
                 target="_blank"
@@ -63,12 +69,18 @@ export default function AlbumShowroom({ className = '' }) {
           </div>
         </FadeIn>
 
-        {/* 4 Showcase Album Products Floor */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 items-stretch">
+        {/* 4 Showcase Album Products Floor — Centered in mobile view */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-8 items-stretch justify-items-center">
           {showcaseAlbums.map((album, idx) => {
             const albumDir = idx === 0 ? 'left' : idx === 3 ? 'right' : 'up';
             return (
-              <FadeIn key={album.id} delay={idx * 0.08} direction={albumDir} distance={32} className="flex h-full">
+              <FadeIn
+                key={album.id}
+                delay={idx * 0.08}
+                direction={albumDir}
+                distance={32}
+                className="flex flex-col items-center justify-center h-full w-full mx-auto"
+              >
                 <Album3DProduct
                   album={album}
                   index={idx}
