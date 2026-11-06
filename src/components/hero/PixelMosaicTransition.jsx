@@ -24,9 +24,9 @@ import gsap from 'gsap';
 // ─── Grid sizing ────────────────────────────────────────────────────────────
 const COLS_DESKTOP = 30;
 const COLS_MOBILE = 18;
-const TRANSITION_DURATION = 1.3; // seconds for the full mosaic
-const TILE_DURATION = 0.55;      // each tile's own reveal duration
-const STAGGER_SPREAD = 0.5;     // total time spread across the stagger
+const TRANSITION_DURATION = 0.65; // snappier for 2-second auto-advance cycle
+const TILE_DURATION = 0.32;       // each tile's own reveal duration
+const STAGGER_SPREAD = 0.28;      // total time spread across the stagger
 
 function getColCount() {
   if (typeof window === 'undefined') return COLS_DESKTOP;

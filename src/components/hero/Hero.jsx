@@ -8,8 +8,8 @@ import PixelMosaicTransition from './PixelMosaicTransition';
 import Button from '../common/Button';
 import { heroScenes } from '../../data/heroScenes';
 
-const AUTO_ADVANCE_DURATION = 5000; // 5 seconds each slide stays still
-const TRANSITION_LOCK_MS = 1600;    // lock-out during mosaic transition
+const AUTO_ADVANCE_DURATION = 2000; // 2 seconds each slide stays still
+const TRANSITION_LOCK_MS = 750;     // lock-out during mosaic transition
 
 /**
  * Ultra Albums Hero Section (v5) — Pixel-Mosaic Transition.

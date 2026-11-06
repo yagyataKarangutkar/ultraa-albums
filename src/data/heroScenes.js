@@ -9,9 +9,9 @@
  */
 
 export const HERO_CONFIG = {
-  // Autoplay is off by default as per reference video (click-driven). Easy to enable here.
-  autoplayDefault: false,
-  autoplayInterval: 8000, // 8 seconds when enabled
+  // Autoplay is on by default with 2-second rotation
+  autoplayDefault: true,
+  autoplayInterval: 2000, // 2 seconds between auto-advance
   transitionDuration: 0.35, // 350ms clean cross-fade measured from 21oaks reference
   ease: [0.16, 1, 0.3, 1], // gentle ease-out without bounce or zoom
   scrimOpacity: 0.32, // ~30% flat black overlay for WCAG AA compliance
