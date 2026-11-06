@@ -134,16 +134,13 @@ export default function FormatStage({
                   transform: isIntroPanel ? 'translateY(0px)' : 'translateY(40px)',
                 }}
               >
-                {/* Format Header Text */}
-                <div className="mb-4 text-left">
-                  <span className="font-serif italic text-sm sm:text-base opacity-80 block mb-1">
-                    {format.subtitle}
-                  </span>
-                  <h3 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight leading-[1.08] mb-2.5">
+                {/* Format Minimal Header */}
+                <div className="mb-3.5 text-left">
+                  <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl font-normal tracking-tight leading-tight text-[#111111]">
                     {format.name}
                   </h3>
-                  <p className="font-sans text-xs sm:text-sm font-light leading-relaxed opacity-85 max-w-md line-clamp-3">
-                    {format.description}
+                  <p className="font-serif italic text-xs sm:text-sm text-[#77736E] mt-0.5 font-light">
+                    {format.subtitle}
                   </p>
                 </div>
 
@@ -155,7 +152,7 @@ export default function FormatStage({
             </div>
 
             {/* Spacer for Bottom Fixed Indicator */}
-            <div className="w-full h-14 sm:h-16 flex-shrink-0" />
+            <div className="w-full h-20 sm:h-24 flex-shrink-0" />
           </div>
         );
       })}
