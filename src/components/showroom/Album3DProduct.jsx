@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import gsap from 'gsap';
-import { BookOpen, Sparkles, ArrowUpRight } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 
 /**
  * Realistic 3D Physical Album Product Component.
@@ -122,7 +122,7 @@ export default function Album3DProduct({
 
       if (infoRef.current) {
         gsap.to(infoRef.current, {
-          borderColor: 'rgba(17, 17, 17, 0.15)',
+          borderColor: '#E5E1DA',
           duration: 0.3,
         });
       }
@@ -342,38 +342,14 @@ export default function Album3DProduct({
         </div>
       </div>
 
-      {/* Understated Product Card Details */}
+      {/* Minimal Product Title Plaque — Title Only */}
       <div
         ref={infoRef}
-        className="w-full mt-4 p-5 bg-white border border-charcoal/15 transition-all duration-300 text-left flex flex-col justify-between flex-1"
+        className="w-full mt-4 py-3.5 px-4 bg-white border border-[#E5E1DA] transition-all duration-300 text-center flex items-center justify-center rounded-[2px]"
       >
-        <div>
-          <div className="flex items-center justify-between mb-1.5">
-            <span className="text-[10px] uppercase font-sans tracking-widest-luxury text-nordic-blue-dark font-semibold">
-              {album.badge}
-            </span>
-            <span className="text-[10px] uppercase font-sans tracking-wider text-charcoal/50">
-              Format 0{index + 1}
-            </span>
-          </div>
-
-          <h3 className="font-serif text-xl sm:text-2xl text-charcoal font-medium">
-            {album.title}
-          </h3>
-
-          <p className="mt-1 text-xs text-charcoal/65 font-light leading-relaxed">
-            {album.tagline}
-          </p>
-        </div>
-
-        {/* Interactive "Open 3D Album" Button */}
-        <div className="mt-4 pt-3.5 border-t border-charcoal/10 flex items-center justify-between">
-          <span className="inline-flex items-center gap-1.5 text-xs font-sans tracking-wider-luxury uppercase text-charcoal font-medium group-hover:text-nordic-blue-dark transition-colors">
-            <BookOpen className="w-3.5 h-3.5" />
-            <span>Open in 3D</span>
-          </span>
-          <ArrowUpRight className="w-4 h-4 text-charcoal/40 group-hover:text-charcoal group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
-        </div>
+        <h3 className="font-serif text-lg sm:text-xl text-[#111111] font-normal tracking-tight group-hover:text-black transition-colors">
+          {album.title}
+        </h3>
       </div>
     </div>
   );
